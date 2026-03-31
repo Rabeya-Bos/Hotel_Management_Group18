@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal3Controller">
+    <children>
+        <Button fx:id="backBtn" layoutX="680.0" layoutY="25.0" text="Back" />
+        <ComboBox fx:id="seasonCombo" layoutX="60.0" layoutY="70.0" prefWidth="150.0" promptText="Season/Event" />
+
+        <TextField fx:id="roomIdField" layoutX="280.0" layoutY="120.0" promptText="Room ID" />
+        <TextField fx:id="currentRateField" layoutX="280.0" layoutY="160.0" promptText="Current Rate" />
+
+        <TextField fx:id="multiplierField" layoutX="460.0" layoutY="120.0" promptText="Enter Multiplier" />
+        <TextField fx:id="newRateField" layoutX="460.0" layoutY="160.0" promptText="New Seasonal Rate" />
+
+        <Button fx:id="addBtn" layoutX="620.0" layoutY="200.0" text="Add Button" />
+
+        <TableView fx:id="pricingTable" layoutX="50.0" layoutY="250.0" prefHeight="220.0" prefWidth="650.0">
+            <columns>
+                <TableColumn fx:id="colRoomId" prefWidth="150.0" text="Room ID" />
+                <TableColumn fx:id="colCurrentRate" prefWidth="150.0" text="Current Rate" />
+                <TableColumn fx:id="colMultiplier" prefWidth="150.0" text="Multiplier" />
+                <TableColumn fx:id="colNewRate" prefWidth="190.0" text="New Seasonal Rate" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
