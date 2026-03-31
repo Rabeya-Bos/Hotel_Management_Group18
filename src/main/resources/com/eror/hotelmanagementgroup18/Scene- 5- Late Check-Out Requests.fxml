@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="506.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Scene5LateCheckOutRequests">
+   <children>
+      <Label layoutX="226.0" layoutY="20.0" prefHeight="27.0" prefWidth="127.0" text="Late Checkout">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="66.0" text="Booking ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="67.0" text="Booking Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="119.0" layoutY="118.0" text="Check-out Date">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TXTBookingID" layoutX="99.0" layoutY="64.0" prefHeight="25.0" prefWidth="162.0" style="-fx-background-color: pink;" />
+      <TextField fx:id="TXTBookingName" layoutX="416.0" layoutY="64.0" prefHeight="25.0" prefWidth="162.0" style="-fx-background-color: pink;" />
+      <DatePicker layoutX="226.0" layoutY="115.0" style="-fx-background-color: pink;" />
+      <TableView fx:id="TableView1" layoutX="35.0" layoutY="153.0" prefHeight="200.0" prefWidth="527.0">
+        <columns>
+          <TableColumn fx:id="ColBookingId" prefWidth="179.33331298828125" text="Booking ID" />
+          <TableColumn fx:id="ColBookingName" prefWidth="179.333251953125" text="Booking Name" />
+            <TableColumn fx:id="ColCheckOutDate" prefWidth="168.00006103515625" text="Check-Out-Date" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="CmbDecision" layoutX="51.0" layoutY="366.0" prefHeight="25.0" prefWidth="175.0" style="-fx-background-color: pink;" />
+      <Button layoutX="303.0" layoutY="366.0" mnemonicParsing="false" onAction="#SubmitOA" prefHeight="25.0" prefWidth="219.0" style="-fx-background-color: #FDBAE1;" text="Submit">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="LVLResult" layoutX="18.0" layoutY="411.0" prefHeight="29.0" prefWidth="593.0" style="-fx-background-color: #C9C2F5;" text="Result">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="70.0" layoutY="451.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: F825A0;" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="439.0" layoutY="451.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: F825A0;" text="Next">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

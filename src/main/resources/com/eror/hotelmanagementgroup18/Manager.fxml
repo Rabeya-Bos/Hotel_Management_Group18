@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="461.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Manager">
+   <children>
+      <Label layoutX="116.0" layoutY="20.0" prefHeight="27.0" prefWidth="314.0" text="                         Manager">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="32.0" layoutY="67.0" mnemonicParsing="false" onAction="#RoomManagemenOA" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: pink;" text="Room Management">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="295.0" layoutY="67.0" mnemonicParsing="false" onAction="#GuestBookingOA" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: pink;" text="Guest Booking">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Line endX="316.66668701171875" endY="-7.62939453125E-6" layoutX="260.0" layoutY="124.0" startX="-231.33334350585938" startY="-7.62939453125E-6" />
+      <Button layoutX="31.0" layoutY="154.0" mnemonicParsing="false" onAction="#HousekeepingStatusOA" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: pink;" text="Housekeeping Status">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="291.0" layoutY="154.0" mnemonicParsing="false" onAction="#CheckINRequestOA" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: pink;" text="Check-In Requests">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Line endX="309.33331298828125" endY="81.33332824707031" layoutX="270.0" layoutY="134.0" startX="-244.0" startY="81.33332824707031" />
+      <Button layoutX="31.0" layoutY="240.0" mnemonicParsing="false" onAction="#LateCheckoutOA" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: pink;" text="Late Checkout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="291.0" layoutY="240.0" mnemonicParsing="false" onAction="#PricingOA" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: pink;" text="Pricing">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Line endX="296.0" endY="156.66665649414062" layoutX="280.0" layoutY="144.0" startX="-253.33334350585938" startY="156.66665649414062" />
+      <Button layoutX="31.0" layoutY="322.0" mnemonicParsing="false" onAction="#DisscountOA" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: pink;" text="Discount">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="291.0" layoutY="322.0" mnemonicParsing="false" onAction="#StaffSchedulingOA" prefHeight="29.0" prefWidth="262.0" style="-fx-background-color: pink;" text="Staff Scheduling">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="183.0" layoutY="394.0" mnemonicParsing="false" onAction="#LoginOA" prefHeight="29.0" prefWidth="185.0" style="-fx-background-color: F825A0;" text="login">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
