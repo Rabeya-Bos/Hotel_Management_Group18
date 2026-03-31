@@ -1,4 +1,4 @@
-package com.eror.hotelmanagementgroup18;
+package com.eror.hotelmanagementgroup18.arpita;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="532.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Goal3LostFound">
+   <children>
+      <Label layoutX="207.0" layoutY="23.0" text="Lost &amp; Found">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="61.0" text="Item name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="325.0" layoutY="61.0" text="Found Loaction">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="108.0" text="Date Found">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="328.0" layoutY="108.0" text="Item Category">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="12.0" layoutY="160.0" text="Description">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="203.0" text="Status">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="310.0" layoutY="203.0" text="Additional Info">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="22.0" layoutY="239.0" mnemonicParsing="false" onAction="#SaveItemOA" style="-fx-background-color: #FDBAE1;" text="Save Item">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="183.0" layoutY="239.0" mnemonicParsing="false" onAction="#DeleteOA" style="-fx-background-color: #FDBAE1;" text="Delete">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="356.0" layoutY="239.0" mnemonicParsing="false" onAction="#UpdateOA" style="-fx-background-color: #FDBAE1;" text="Update">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="495.0" layoutY="239.0" mnemonicParsing="false" onAction="#ClearOA" style="-fx-background-color: #FDBAE1;" text="Clear">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="TableView1" layoutX="38.0" layoutY="289.0" prefHeight="200.0" prefWidth="533.0">
+        <columns>
+          <TableColumn fx:id="ColItemid" prefWidth="75.0" text="Item Id" />
+          <TableColumn fx:id="ColName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="ColCategory" prefWidth="75.0" text="Category" />
+            <TableColumn fx:id="ColLocation" prefWidth="75.0" text="Location" />
+            <TableColumn fx:id="ColDate" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="ColStatus" prefWidth="75.0" text="Status" />
+            <TableColumn fx:id="ColValuable" prefWidth="80.00002034505212" text="Valuable" />
+        </columns>
+      </TableView>
+      <Button layoutX="28.0" layoutY="493.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="29.0" prefWidth="96.0" style="-fx-background-color: F825A0;" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="434.0" layoutY="493.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="29.0" prefWidth="104.0" style="-fx-background-color: F825A0;" text="Next">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="TXTItemName" layoutX="93.0" layoutY="58.0" style="-fx-background-color: pink;" />
+      <TextField fx:id="TXTFoundLocation" layoutX="428.0" layoutY="58.0" style="-fx-background-color: pink;" />
+      <DatePicker fx:id="DateFound" layoutX="96.0" layoutY="105.0" style="-fx-background-color: Pink;" />
+      <ComboBox fx:id="CmbItemCategory" layoutX="428.0" layoutY="105.0" prefWidth="150.0" style="-fx-background-color: Pink;" />
+      <TextArea fx:id="TextArea" layoutX="96.0" layoutY="150.0" prefHeight="29.0" prefWidth="454.0" />
+      <RadioButton fx:id="RBStatus" layoutX="110.0" layoutY="205.0" mnemonicParsing="false" style="-fx-background-color: Pink;" text="RadioButton" />
+      <CheckBox fx:id="CBAditionalInfo" layoutX="421.0" layoutY="205.0" mnemonicParsing="false" style="-fx-background-color: Pink;" text="CheckBox" />
+   </children>
+</AnchorPane>

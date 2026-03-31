@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="541.0" prefWidth="628.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Scene7ApplyDiscount">
+<AnchorPane prefHeight="541.0" prefWidth="628.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Scene7ApplyDiscount">
    <children>
       <Label layoutX="263.0" layoutY="23.0" text="Discount">
          <font>

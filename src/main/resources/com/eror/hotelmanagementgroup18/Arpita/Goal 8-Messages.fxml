@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="304.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Arpita.Goal8Messages">
+   <children>
+      <Label layoutX="241.0" layoutY="14.0" text="Messages">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="53.0" text="Sender" />
+      <Label layoutX="328.0" layoutY="53.0" text="Receiver" />
+      <Label layoutX="20.0" layoutY="110.0" text="Subject" />
+      <Label layoutX="286.0" layoutY="110.0" text="Message Body" />
+      <Label layoutX="34.0" layoutY="170.0" text="Priority" />
+      <Label layoutX="260.0" layoutY="170.0" text="Options" />
+      <Button layoutX="91.0" layoutY="234.0" mnemonicParsing="false" onAction="#SendOA" text="Send " />
+      <Button layoutX="365.0" layoutY="234.0" mnemonicParsing="false" onAction="#ClearOA" text="Clear" />
+      <ComboBox fx:id="CmbSender" layoutX="78.0" layoutY="49.0" prefWidth="150.0" />
+      <ComboBox fx:id="CmbReciver" layoutX="391.0" layoutY="49.0" prefWidth="150.0" />
+      <TextField fx:id="TXTSubject" layoutX="79.0" layoutY="107.0" />
+      <TextArea fx:id="TextArea1" layoutX="373.0" layoutY="87.0" prefHeight="63.0" prefWidth="193.0" />
+      <RadioButton fx:id="RBPriority" layoutX="79.0" layoutY="170.0" mnemonicParsing="false" text="RadioButton" />
+      <CheckBox fx:id="CBOptions" layoutX="354.0" layoutY="170.0" mnemonicParsing="false" text="CheckBox" />
+   </children>
+</AnchorPane>

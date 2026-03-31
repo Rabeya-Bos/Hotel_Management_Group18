@@ -1,32 +1,30 @@
-package com.eror.hotelmanagementgroup18;
+package com.eror.hotelmanagementgroup18.arpita;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class Goal1UpdateCleaningStatus
+public class Scene4ApproveGuestCheckIn
 {
     @javafx.fxml.FXML
-    private ComboBox CmbAdtionalOption;
+    private TableColumn ColGuestName;
     @javafx.fxml.FXML
-    private ComboBox CmbRoomType;
+    private TableColumn ColDate;
     @javafx.fxml.FXML
-    private ComboBox CmbCleaningStatus;
+    private TableColumn ColBookingId;
     @javafx.fxml.FXML
-    private TextField TXTRoomNumber;
+    private TextField TXTBookingID;
+    @javafx.fxml.FXML
+    private TextField TXTGuestName;
     @javafx.fxml.FXML
     private Label LVLResult;
     @javafx.fxml.FXML
-    private RadioButton RDBPriority;
+    private TableView TableView1;
 
     @javafx.fxml.FXML
     public void initialize() {
-    }
-
-    @javafx.fxml.FXML
-    public void UpdateStatusOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -34,7 +32,7 @@ public class Goal1UpdateCleaningStatus
     }
 
     @javafx.fxml.FXML
-    public void ClearOA(ActionEvent actionEvent) {
+    public void ApproveOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
