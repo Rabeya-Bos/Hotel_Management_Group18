@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="428.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Goal6ShiftChangeRequest">
+   <children>
+      <Label layoutX="215.0" layoutY="22.0" text="Shift Change">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="56.0" text="Staff Name" />
+      <Label layoutX="283.0" layoutY="56.0" text="Current Shift Date" />
+      <Label layoutX="21.0" layoutY="112.0" text="Current Shift" />
+      <Label layoutX="286.0" layoutY="112.0" text="Requested Shift Date" />
+      <Label layoutX="21.0" layoutY="176.0" text="Requested Shift" />
+      <Label layoutX="300.0" layoutY="176.0" text="Reason" />
+      <Label layoutX="21.0" layoutY="235.0" text="Request Status" />
+      <Label layoutX="292.0" layoutY="235.0" text="Additional Options" />
+      <Button layoutX="23.0" layoutY="297.0" mnemonicParsing="false" onAction="#SubmitRequestOA" text="Submit Request" />
+      <Button layoutX="163.0" layoutY="297.0" mnemonicParsing="false" onAction="#UpdateOA" text="Update" />
+      <Button layoutX="274.0" layoutY="297.0" mnemonicParsing="false" onAction="#CancelOA" text="cancel" />
+      <Button layoutX="433.0" layoutY="297.0" mnemonicParsing="false" onAction="#ClearOA" text="Clear" />
+      <ComboBox fx:id="CmbStaffName" layoutX="95.0" layoutY="52.0" prefWidth="150.0" />
+      <DatePicker fx:id="Date1" layoutX="388.0" layoutY="52.0" />
+      <ComboBox fx:id="CmbCurrentShift" layoutX="95.0" layoutY="108.0" prefWidth="150.0" />
+      <DatePicker fx:id="Date2" layoutX="410.0" layoutY="108.0" prefHeight="25.0" prefWidth="163.0" />
+      <ComboBox fx:id="CmbRequestedShift" layoutX="107.0" layoutY="172.0" prefWidth="150.0" />
+      <TextArea fx:id="TextArea1" layoutX="359.0" layoutY="147.0" prefHeight="60.0" prefWidth="200.0" />
+      <RadioButton fx:id="RBRequestStatus" layoutX="119.0" layoutY="235.0" mnemonicParsing="false" text="RadioButton" />
+      <CheckBox fx:id="CBAditionalOptiona" layoutX="433.0" layoutY="235.0" mnemonicParsing="false" text="CheckBox" />
+      <Button layoutX="231.0" layoutY="370.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="74.0" text="Back" />
+   </children>
+</AnchorPane>

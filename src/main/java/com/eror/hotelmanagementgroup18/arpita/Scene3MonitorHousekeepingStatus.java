@@ -1,25 +1,20 @@
-package com.eror.hotelmanagementgroup18;
+package com.eror.hotelmanagementgroup18.arpita;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class Scene4ApproveGuestCheckIn
+public class Scene3MonitorHousekeepingStatus
 {
     @javafx.fxml.FXML
-    private TableColumn ColGuestName;
+    private TableColumn ColRoomNumber;
     @javafx.fxml.FXML
-    private TableColumn ColDate;
+    private TextField TXTRoomNo;
     @javafx.fxml.FXML
-    private TableColumn ColBookingId;
+    private TextField TXTStatus;
     @javafx.fxml.FXML
-    private TextField TXTBookingID;
-    @javafx.fxml.FXML
-    private TextField TXTGuestName;
-    @javafx.fxml.FXML
-    private Label LVLResult;
+    private TableColumn ColStatus;
     @javafx.fxml.FXML
     private TableView TableView1;
 
@@ -32,7 +27,7 @@ public class Scene4ApproveGuestCheckIn
     }
 
     @javafx.fxml.FXML
-    public void ApproveOA(ActionEvent actionEvent) {
+    public void RefreshOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

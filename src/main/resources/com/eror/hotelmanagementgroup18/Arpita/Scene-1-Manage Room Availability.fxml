@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="538.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Scene1ManageRoomAvailability">
+<AnchorPane prefHeight="538.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Scene1ManageRoomAvailability">
    <children>
       <Label layoutX="110.0" layoutY="29.0" prefHeight="20.0" prefWidth="350.0" text="                        Room Management">
          <font>

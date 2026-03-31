@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="277.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Arpita.Goal7FloorCleaningProgress">
+   <children>
+      <Label layoutX="205.0" layoutY="14.0" text="Floor Progress">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="51.0" text="Floor Number" />
+      <Label layoutX="333.0" layoutY="51.0" text="Assigned Staff" />
+      <Label layoutX="27.0" layoutY="98.0" text="Date" />
+      <Label layoutX="341.0" layoutY="98.0" text="Cleaning Status" />
+      <Label layoutX="27.0" layoutY="142.0" text="Priority" />
+      <Label layoutX="347.0" layoutY="142.0" text="Additional Options" />
+      <CheckBox fx:id="CBAdditionalOption" layoutX="470.0" layoutY="142.0" mnemonicParsing="false" text="CheckBox" />
+      <RadioButton fx:id="RBPriority" layoutX="82.0" layoutY="142.0" mnemonicParsing="false" text="RadioButton" />
+      <ComboBox fx:id="CmbCleaningStatus" layoutX="432.0" layoutY="94.0" prefWidth="150.0" />
+      <DatePicker fx:id="Date1" layoutX="58.0" layoutY="94.0" />
+      <ComboBox fx:id="CmbFloorNumber" layoutX="115.0" layoutY="47.0" prefWidth="150.0" />
+      <ComboBox fx:id="CmbAssignedStaff" layoutX="424.0" layoutY="47.0" prefWidth="150.0" />
+      <Button layoutX="89.0" layoutY="201.0" mnemonicParsing="false" onAction="#UpdateStatus" text="update Status" />
+      <Button layoutX="357.0" layoutY="201.0" mnemonicParsing="false" onAction="#ClearOA" prefHeight="25.0" prefWidth="76.0" text="Clear" />
+   </children>
+</AnchorPane>
