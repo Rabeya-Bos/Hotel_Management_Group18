@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="478.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_12_refundAdjustmentController">
+    <children>
+        <Label layoutX="25.0" layoutY="56.0" text="Invoice ID" />
+        <TextField fx:id="invoiceIdTF" layoutX="125.0" layoutY="51.0" prefWidth="200" />
+
+        <Label layoutX="25.0" layoutY="106.0" text="Refund Amount" />
+        <TextField fx:id="refundAmountTF" layoutX="125.0" layoutY="101.0" prefWidth="200" />
+
+        <Label layoutX="25.0" layoutY="156.0" text="Reason" />
+        <TextField fx:id="reasonTF" layoutX="125.0" layoutY="151.0" prefWidth="200" />
+
+        <Button layoutX="150.0" layoutY="202.0" onAction="#processRefundButtonOA" prefWidth="150" text="Process Refund" />
+
+        <Label fx:id="messageLabel" layoutX="25.0" layoutY="206.0" text="Status Message" />
+
+        <TableView fx:id="refundTV" layoutX="52.0" layoutY="239.0" prefHeight="225.0" prefWidth="241.0">
+            <columns>
+                <TableColumn fx:id="invoiceCol" text="Invoice ID" />
+                <TableColumn fx:id="refundAmountCol" prefWidth="103.0" text="Refund Amount" />
+                <TableColumn fx:id="reasonCol" prefWidth="57.0" text="Reason" />
+            </columns>
+        </TableView>
+        <Label layoutX="78.0" layoutY="14.0" text="Refund and Adjustment Processing">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

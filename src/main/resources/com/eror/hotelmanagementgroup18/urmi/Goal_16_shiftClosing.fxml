@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="510.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_16_shiftClosingController">
+    <children>
+        <Label layoutX="305.0" layoutY="21.0" text="Shift Closing Report" textAlignment="JUSTIFY">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font></Label>
+
+        <Label layoutX="35.0" layoutY="64.0" text="Cashier Name:" />
+        <TextField fx:id="cashierNameTF" editable="false" layoutX="180.0" layoutY="60.0" prefWidth="200.0" />
+
+        <Label layoutX="35.0" layoutY="104.0" text="Shift Date:" />
+        <TextField fx:id="shiftDateTF" editable="false" layoutX="180.0" layoutY="100.0" prefWidth="200.0" />
+
+        <Label layoutX="35.0" layoutY="138.0" text="Total Cash Transactions:" />
+        <TextField fx:id="totalCashTF" editable="false" layoutX="235.0" layoutY="138.0" prefWidth="150.0" />
+
+        <Label layoutX="35.0" layoutY="178.0" text="Total Card Transactions:" />
+        <TextField fx:id="totalCardTF" editable="false" layoutX="235.0" layoutY="178.0" prefWidth="150.0" />
+        <Label layoutX="35.0" layoutY="218.0" text="Total Online Transactions:" />
+        <TextField fx:id="totalOnlineTF" editable="false" layoutX="235.0" layoutY="218.0" prefWidth="150.0" />
+
+        <Label layoutX="35.0" layoutY="268.0" text="Grand Total:" />
+        <TextField fx:id="grandTotalTF" editable="false" layoutX="235.0" layoutY="268.0" prefWidth="150.0" />
+
+        <Label layoutX="35.0" layoutY="312.0" text="Notes / Comments:" />
+        <TextArea fx:id="notesTA" layoutX="165.0" layoutY="312.0" prefHeight="100.0" prefWidth="231.0" promptText="Add any shift notes..." />
+        <Button layoutX="174.0" layoutY="470.0" mnemonicParsing="false" onAction="#submitReportButtonOA" prefWidth="150.0" text="Submit Report" />
+        <Button layoutX="349.0" layoutY="470.0" mnemonicParsing="false" onAction="#printReportButtonOA" prefWidth="150.0" text="Print Report" />
+
+        <TableView fx:id="shiftSummaryTV" layoutX="415.0" layoutY="54.0" prefHeight="292.0" prefWidth="291.0">
+            <columns>
+                <TableColumn fx:id="TypeCol" prefWidth="120.0" text="Type" />
+                <TableColumn fx:id="countCol" prefWidth="70.0" text="Count" />
+                <TableColumn fx:id="amountCol" prefWidth="100.0" text="Amount" />
+            </columns>
+        </TableView>
+
+        <Label fx:id="statusLabel" layoutX="451.0" layoutY="362.0" prefHeight="42.0" prefWidth="222.0" />
+
+        <Label fx:id="submissionStatusLabel" layoutX="450.0" layoutY="460.0" prefWidth="320.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550" prefWidth="518.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_10_generateInvoiceController">
+    <children>
+        <Label layoutX="173.0" layoutY="20.0" text="Invoice Generation System">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="20" layoutY="70" text="Guest ID" />
+        <TextField fx:id="guestTF" layoutX="120" layoutY="65" prefWidth="200" />
+
+        <Label layoutX="20" layoutY="120" text="Nights Stayed" />
+        <TextField fx:id="nightTF" layoutX="120" layoutY="115" prefWidth="200" />
+
+        <Button layoutX="350" layoutY="115" onAction="#addInvoiceButtonOA" prefWidth="150" text="Generate Invoice" />
+
+        <TableView fx:id="invoiceTV" layoutX="94.0" layoutY="183.0" prefHeight="320" prefWidth="310.0">
+            <columns>
+                <TableColumn fx:id="guestCol" prefWidth="110.0" text="Guest ID" />
+                <TableColumn fx:id="nightCol" prefWidth="74.0" text="Nights" />
+                <TableColumn fx:id="totalCol" prefWidth="124.0" text="Total Amount ($)" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="516.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_9_processPaymentController">
+    <children>
+        <Label layoutX="146.0" layoutY="23.0" text="Payment Processing System">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="20" layoutY="70" text="Guest ID" />
+        <TextField fx:id="guestTF" layoutX="120" layoutY="65" prefWidth="200" />
+
+        <Label layoutX="20" layoutY="120" text="Room Number" />
+        <TextField fx:id="roomTF" layoutX="120" layoutY="115" prefWidth="200" />
+
+        <Label layoutX="20" layoutY="170" text="Amount" />
+        <TextField fx:id="amountTF" layoutX="120" layoutY="165" prefWidth="200" />
+
+        <Button layoutX="350" layoutY="165" onAction="#addPaymentButtonOA" prefWidth="150" text="Confirm Payment" />
+
+        <TableView fx:id="paymentTV" layoutX="63.0" layoutY="219.0" prefHeight="280" prefWidth="359.0">
+            <columns>
+                <TableColumn fx:id="guestCol" prefWidth="123.0" text="Guest ID" />
+                <TableColumn fx:id="roomCol" prefWidth="110.0" text="Room Number" />
+                <TableColumn fx:id="amountCol" prefWidth="125.0" text="Amount ($)" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
