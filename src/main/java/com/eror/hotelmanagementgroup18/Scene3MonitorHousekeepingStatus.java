@@ -5,7 +5,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class Goal3MonitorHousekeepingStatus
+public class Scene3MonitorHousekeepingStatus
 {
     @javafx.fxml.FXML
     private TableColumn ColRoomNumber;
