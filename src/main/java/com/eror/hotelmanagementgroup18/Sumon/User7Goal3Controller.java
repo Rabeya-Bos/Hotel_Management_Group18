@@ -1,5 +1,7 @@
 package com.eror.hotelmanagementgroup18.Sumon;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,105 +9,78 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.io.IOException;
 
 public class User7Goal3Controller {
 
-    @FXML private TextField roomIdField;
-    @FXML private TextField currentRateField;
-    @FXML private TextField multiplierField;
-    @FXML private TextField newRateField;
+    @FXML private TextField roomIdField, currentRateField, multiplierField, newRateField;
     @FXML private ComboBox<String> seasonCombo;
+    @FXML private TableView<PricingData> pricingTable;
+    @FXML private TableColumn<PricingData, String> colRoomId, colCurrentRate, colMultiplier, colNewRate;
 
-    @FXML private Button backBtn;
-    @FXML private Button addBtn;
-
-    @FXML private TableView<?> pricingTable;
-    @FXML private TableColumn<?, ?> colRoomId;
-    @FXML private TableColumn<?, ?> colCurrentRate;
-    @FXML private TableColumn<?, ?> colMultiplier;
-    @FXML private TableColumn<?, ?> colNewRate;
+    private ObservableList<PricingData> pricingList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        // Populate the season options in ComboBox
-        seasonCombo.getItems().addAll("Peak Season", "Off-Season", "Holiday Event", "Weekend Special");
+        seasonCombo.getItems().addAll("Holiday Season", "Summer Peak", "Weekend Special", "Conference Event");
 
-        // Ensure newRateField is not manually editable since it's calculated
-        newRateField.setEditable(false);
+        colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
+        colCurrentRate.setCellValueFactory(new PropertyValueFactory<>("currentRate"));
+        colMultiplier.setCellValueFactory(new PropertyValueFactory<>("multiplier"));
+        colNewRate.setCellValueFactory(new PropertyValueFactory<>("newRate"));
+
+        pricingTable.setItems(pricingList);
     }
 
-    /**
-     * Handles the 'Add' action with full validation and rate calculation.
-     */
     @FXML
-    private void handleAddBtn(ActionEvent event) {
-        // 1. Validation: Check if any required field is empty
-        if (roomIdField.getText().isEmpty() || currentRateField.getText().isEmpty() ||
-                multiplierField.getText().isEmpty() || seasonCombo.getValue() == null) {
+    void handleAddBtn(ActionEvent event) {
+        String id = roomIdField.getText().trim();
+        String current = currentRateField.getText().trim();
+        String mult = multiplierField.getText().trim();
 
-            showAlert("Input Error", "All fields are required. Please check your inputs.");
+        if (id.isEmpty() || current.isEmpty() || mult.isEmpty() || seasonCombo.getValue() == null) {
+            showAlert("Error", "Please fill all fields!");
             return;
         }
 
-        // 2. Validation: Numeric checks and calculation logic
-        try {
-            double currentRate = Double.parseDouble(currentRateField.getText());
-            double multiplier = Double.parseDouble(multiplierField.getText());
 
-            if (currentRate <= 0 || multiplier <= 0) {
-                showAlert("Value Error", "Rate and Multiplier must be greater than zero.");
+        for (PricingData p : pricingList) {
+            if (p.getRoomId().equals(id)) {
+                showAlert("Duplicate", "Pricing for Room " + id + " is already set!");
                 return;
             }
+        }
 
-            // Perform Calculation: New Rate = Current Rate * Multiplier
-            double calculatedRate = currentRate * multiplier;
+        try {
+            double cRate = Double.parseDouble(current);
+            double mValue = Double.parseDouble(mult);
+            double nRate = cRate * mValue;
+            newRateField.setText(String.format("%.2f", nRate));
 
-            // Display the calculated result formatted to 2 decimal places
-            newRateField.setText(String.format("%.2f", calculatedRate));
+            pricingList.add(new PricingData(id, current, mult, String.valueOf(nRate)));
+            showAlert("Success", "Pricing Updated for Room " + id);
 
-            // Success confirmation
-            System.out.println("Pricing calculated for Room: " + roomIdField.getText());
-            showAlert("Success", "Seasonal pricing has been calculated and added successfully.");
-
-            // clearFields(); // Uncomment if you want fields to clear after success
-
+            roomIdField.clear(); currentRateField.clear(); multiplierField.clear();
         } catch (NumberFormatException e) {
-            showAlert("Format Error", "Please enter valid numeric values for Current Rate and Multiplier.");
+            showAlert("Error", "Please enter valid numbers!");
         }
     }
 
-    /**
-     * Navigates back to the Admin Dashboard.
-     */
     @FXML
-    private void handleBackBtn(ActionEvent event) throws IOException {
+    void handleBackBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/eror/hotelmanagementgroup18/Sumon/Admin_deshboard.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
     }
 
-    /**
-     * Helper method to show alerts without Bengali text.
-     */
-    private void showAlert(String title, String message) {
+    private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    /**
-     * Resets all input fields.
-     */
-    private void clearFields() {
-        roomIdField.clear();
-        currentRateField.clear();
-        multiplierField.clear();
-        newRateField.clear();
-        seasonCombo.getSelectionModel().clearSelection();
+        alert.setContentText(content);
+        alert.show();
     }
 }

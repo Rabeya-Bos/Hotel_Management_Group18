@@ -3,17 +3,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.AdmindeshboardController">
+<AnchorPane prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.AdmindeshboardController">
     <children>
-        <Label layoutX="302.0" layoutY="34.0" text="Hotel Management">
-            <font><Font name="System Bold" size="24.0" /></font>
-        </Label>
-        <Label layoutX="367.0" layoutY="75.0" text="Admin">
-            <font><Font size="18.0" /></font>
-        </Label>
-        <Button fx:id="signOutBtn" layoutX="710.0" layoutY="34.0" text="Sign out" />
+        <Pane prefHeight="90.0" prefWidth="900.0" style="-fx-background-color: #1a252f; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);">
+            <children>
+                <Label layoutX="30.0" layoutY="30.0" text="LUXURY HOTEL MANAGEMENT" textFill="#d4af37">
+                    <font><Font name="System Bold" size="24.0" /></font>
+                </Label>
+                <Label layoutX="430.0" layoutY="35.0" text="ADMIN DASHBOARD" textFill="WHITE">
+                    <font><Font size="18.0" /></font>
+                </Label>
+                <Button fx:id="signOutBtn" layoutX="780.0" layoutY="30.0" onAction="#handleSignOutBtn" prefWidth="90.0" style="-fx-background-color: #e74c3c; -fx-cursor: hand;" text="Sign out" textFill="WHITE">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Button>
+            </children>
+        </Pane>
 
-        <GridPane hgap="20.0" layoutX="100.0" layoutY="150.0" prefHeight="400.0" prefWidth="600.0" vgap="20.0">
+        <GridPane hgap="25.0" layoutX="50.0" layoutY="140.0" prefHeight="450.0" prefWidth="800.0" vgap="25.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
@@ -21,18 +27,41 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="180.0" prefHeight="180.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="180.0" prefHeight="180.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="manageInventoryBtn" prefHeight="150.0" prefWidth="150.0" text="Manage Inventory" wrapText="true" />
-                <Button fx:id="payrollBtn" prefHeight="150.0" prefWidth="150.0" text="Payroll Management" wrapText="true" GridPane.columnIndex="1" />
-                <Button fx:id="pricingBtn" prefHeight="150.0" prefWidth="150.0" text="Pricing Controls" wrapText="true" GridPane.columnIndex="2" />
-                <Button fx:id="vipGuestBtn" prefHeight="150.0" prefWidth="150.0" text="VIP Guest List" wrapText="true" GridPane.columnIndex="3" />
-                <Button fx:id="serviceMenuBtn" prefHeight="150.0" prefWidth="150.0" text="Service Menu" wrapText="true" GridPane.rowIndex="1" />
-                <Button fx:id="reportsBtn" prefHeight="150.0" prefWidth="150.0" text="Reports" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Button fx:id="inventoryAuditBtn" prefHeight="150.0" prefWidth="150.0" text="Inventory Audit" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <Button fx:id="guestReviewsBtn" prefHeight="150.0" prefWidth="150.0" text="Guest Reviews" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Button onAction="#handleManageInventoryBtn" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #d4af37; -fx-border-radius: 15; -fx-border-width: 2; -fx-cursor: hand;" text="Manage Inventory" textAlignment="CENTER" wrapText="true">
+                    <font><Font name="System Bold" size="15.0" /></font>
+                </Button>
+
+                <Button onAction="#handlePayrollManagementBtn" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #d4af37; -fx-border-radius: 15; -fx-border-width: 2; -fx-cursor: hand;" text="Payroll Management" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
+                    <font><Font name="System Bold" size="15.0" /></font>
+                </Button>
+
+                <Button onAction="#handlePricingControlsBtn" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #d4af37; -fx-border-radius: 15; -fx-border-width: 2; -fx-cursor: hand;" text="Pricing Controls" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
+                    <font><Font name="System Bold" size="15.0" /></font>
+                </Button>
+
+                <Button onAction="#handleVIPGuestListBtn" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #d4af37; -fx-border-radius: 15; -fx-border-width: 2; -fx-cursor: hand;" text="VIP Guest List" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3">
+                    <font><Font name="System Bold" size="15.0" /></font>
+                </Button>
+
+                <Button prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #d4af37; -fx-border-radius: 15; -fx-border-width: 2; -fx-cursor: hand;" text="Service Menu" wrapText="true" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="15.0" /></font>
+                </Button>
+
+                <Button prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #d4af37; -fx-border-radius: 15; -fx-border-width: 2; -fx-cursor: hand;" text="Reports" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="15.0" /></font>
+                </Button>
+
+                <Button prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #d4af37; -fx-border-radius: 15; -fx-border-width: 2; -fx-cursor: hand;" text="Inventory Audit" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="15.0" /></font>
+                </Button>
+
+                <Button prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #d4af37; -fx-border-radius: 15; -fx-border-width: 2; -fx-cursor: hand;" text="Guest Reviews" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="15.0" /></font>
+                </Button>
             </children>
         </GridPane>
     </children>

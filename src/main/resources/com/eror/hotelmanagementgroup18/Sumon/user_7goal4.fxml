@@ -3,21 +3,38 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal4Controller">
+<AnchorPane prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #f5f6fa;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal4Controller">
     <children>
-        <Label layoutX="260.0" layoutY="20.0" text="VIP Guest Management">
-            <font><Font name="System Bold" size="22.0" /></font>
-        </Label>
-        <TextField fx:id="guestIdField" layoutX="50.0" layoutY="70.0" promptText="Enter Guest ID" />
-        <Button layoutX="220.0" layoutY="70.0" text="Verify &amp; Load Profile" />
-        <TableView fx:id="vipTable" layoutX="50.0" layoutY="120.0" prefHeight="330.0" prefWidth="650.0">
+        <Pane prefHeight="100.0" prefWidth="950.0" style="-fx-background-color: #1a252f; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);">
+            <children>
+                <Label layoutX="30.0" layoutY="32.0" text="ROYAL VIP GUEST MANAGEMENT" textFill="#d4af37">
+                    <font><Font name="System Bold" size="26.0" /></font>
+                </Label>
+                <Button layoutX="840.0" layoutY="35.0" onAction="#handleBackBtn" style="-fx-background-color: #d4af37; -fx-cursor: hand;" text="GO BACK" textFill="WHITE">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Button>
+            </children>
+        </Pane>
+
+        <Pane layoutX="30.0" layoutY="125.0" prefHeight="90.0" prefWidth="890.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <children>
+                <TextField fx:id="guestIdField" layoutX="25.0" layoutY="28.0" prefHeight="35.0" prefWidth="300.0" promptText="Enter VIP Guest Identification ID" style="-fx-border-color: #bdc3c7; -fx-border-radius: 5;" />
+                <Button layoutX="345.0" layoutY="28.0" onAction="#handleVerifyBtn" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #2c3e50; -fx-cursor: hand;" text="Verify &amp; Load Profile" textFill="WHITE">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Button>
+                <Label layoutX="570.0" layoutY="35.0" text="* Accessing restricted VIP profiles..." textFill="#7f8c8d">
+                    <font><Font name="System Italic" size="13.0" /> </font>
+                </Label>
+            </children>
+        </Pane>
+
+        <TableView fx:id="vipTable" layoutX="30.0" layoutY="235.0" prefHeight="380.0" prefWidth="890.0" style="-fx-border-color: #d4af37; -fx-background-radius: 5; -fx-border-radius: 5;">
             <columns>
-                <TableColumn text="Guest Name" prefWidth="150" />
-                <TableColumn text="Loyalty Points" prefWidth="120" />
-                <TableColumn text="Status Tier" prefWidth="130" />
-                <TableColumn text="Visit History" prefWidth="248" />
+                <TableColumn fx:id="colName" prefWidth="180.0" text="Guest Name" />
+                <TableColumn fx:id="colPoints" prefWidth="150.0" text="Loyalty Points" />
+                <TableColumn fx:id="colTier" prefWidth="180.0" text="Status Tier" />
+                <TableColumn fx:id="colHistory" prefWidth="378.0" text="Guest History &amp; Preferential Remarks" />
             </columns>
         </TableView>
-        <Button fx:id="backBtn" layoutX="680.0" layoutY="20.0" text="Back" />
     </children>
 </AnchorPane>

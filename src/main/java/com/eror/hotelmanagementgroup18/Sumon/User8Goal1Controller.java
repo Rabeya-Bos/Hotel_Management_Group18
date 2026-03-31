@@ -1,5 +1,7 @@
 package com.eror.hotelmanagementgroup18.Sumon;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -14,58 +17,65 @@ public class User8Goal1Controller {
 
     @FXML private TextField staffIdField;
     @FXML private ComboBox<String> levelCombo;
-    @FXML private TableView<?> cardTable;
-    @FXML private Button backBtn;
+    @FXML private TableView<SecurityCard> cardTable;
+    @FXML private TableColumn<SecurityCard, String> colStaffId, colLevel, colStatus;
+
+    private ObservableList<SecurityCard> cardList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        // Populating access levels
-        levelCombo.getItems().addAll("Level 1: General", "Level 2: Staff Area", "Level 3: Management", "Level 4: Full Access");
+
+        levelCombo.getItems().addAll("Floor 1-5", "Admin Office", "Server Room", "Full Access");
+
+
+        colStaffId.setCellValueFactory(new PropertyValueFactory<>("staffId"));
+        colLevel.setCellValueFactory(new PropertyValueFactory<>("accessLevel"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        cardTable.setItems(cardList);
     }
 
-
     @FXML
-    private void handleUpdateCard(ActionEvent event) {
-        String staffId = staffIdField.getText().trim();
-        String accessLevel = levelCombo.getValue();
+    void handleUpdateBtn(ActionEvent event) {
+        String id = staffIdField.getText().trim();
+        String level = levelCombo.getValue();
 
-        // 1. Validation: Check for empty fields
-        if (staffId.isEmpty() || accessLevel == null) {
-            showAlert("Validation Error", "Please enter a Staff ID and select an Access Level.");
+
+        if (id.isEmpty() || level == null) {
+            showAlert(Alert.AlertType.WARNING, "Error", "Please fill all fields!");
             return;
         }
 
-        if (!staffId.matches("^[a-zA-Z0-9]+$")) {
-            showAlert("Input Error", "Staff ID must contain only letters and numbers.");
-            return;
+
+        for (SecurityCard card : cardList) {
+            if (card.getStaffId().equals(id)) {
+                showAlert(Alert.AlertType.ERROR, "Duplicate", "Staff ID " + id + " already has an access card!");
+                return;
+            }
         }
 
-        System.out.println("Access updated for Staff: " + staffId + " to " + accessLevel);
-        showAlert("Update Successful", "The access card for Staff ID " + staffId + " has been updated to " + accessLevel + ".");
 
-        clearFields();
+        cardList.add(new SecurityCard(id, level, "Active"));
+        showAlert(Alert.AlertType.INFORMATION, "Success", "Access Card Updated for Staff: " + id);
+
+        staffIdField.clear();
+        levelCombo.setValue(null);
     }
 
-
     @FXML
-    private void handleBackBtn(ActionEvent event) throws IOException {
-        // Change this path if your Security Dashboard FXML has a different name
-        Parent root = FXMLLoader.load(getClass().getResource("/com/eror/hotelmanagementgroup18.Sumon/Security_dashboard.fxml"));
+    void handleBackBtn(ActionEvent event) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/eror/hotelmanagementgroup18/Sumon/Security_dashboard.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
     }
 
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private void showAlert(Alert.AlertType type, String title, String content) {
+        Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    private void clearFields() {
-        staffIdField.clear();
-        levelCombo.getSelectionModel().clearSelection();
+        alert.setContentText(content);
+        alert.show();
     }
 }

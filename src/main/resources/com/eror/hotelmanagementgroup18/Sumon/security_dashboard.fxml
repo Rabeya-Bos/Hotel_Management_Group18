@@ -3,12 +3,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.SecurityDashboardController">
+<AnchorPane prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.SecurityDashboardController">
     <children>
-        <Label layoutX="320.0" layoutY="40.0" text="Security Dashboard">
-            <font><Font name="System Bold" size="28.0" /></font>
-        </Label>
-        <GridPane hgap="15.0" layoutX="50.0" layoutY="120.0" prefHeight="420.0" prefWidth="750.0" vgap="15.0">
+        <Pane prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: #2c3e50; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);">
+            <children>
+                <Label layoutX="30.0" layoutY="32.0" text="PREMIUM SECURITY CONTROL" textFill="#d4af37">
+                    <font><Font name="System Bold" size="26.0" /></font>
+                </Label>
+                <Button layoutX="780.0" layoutY="35.0" onAction="#handleSignOutBtn" prefWidth="90.0" style="-fx-background-color: #e74c3c; -fx-cursor: hand;" text="SIGN OUT" textFill="WHITE">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Button>
+            </children>
+        </Pane>
+
+        <GridPane hgap="20.0" layoutX="50.0" layoutY="130.0" prefHeight="480.0" prefWidth="800.0" vgap="20.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -20,15 +28,29 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="btn1" prefHeight="100.0" prefWidth="380.0" text="Access Card Management" />
-                <Button fx:id="btn2" prefHeight="100.0" prefWidth="380.0" text="Incident Reporting" GridPane.columnIndex="1" />
+                <Button onAction="#handleAccessCardBtn" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10; -fx-cursor: hand;" text="Access Card Management">
+                    <font><Font name="System Bold" size="16.0" /></font></Button>
 
-                <Button fx:id="btn3" prefHeight="100.0" prefWidth="380.0" text="Surveillance Operation" GridPane.rowIndex="1" />
-                <Button fx:id="btn4" prefHeight="100.0" prefWidth="380.0" text="Emergency Response Log" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Button fx:id="btn5" prefHeight="100.0" prefWidth="380.0" text="CCTV Monitoring" GridPane.rowIndex="2" />
-                <Button fx:id="btn6" prefHeight="100.0" prefWidth="380.0" text="VIP Parking Allocation" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Button fx:id="btn7" prefHeight="100.0" prefWidth="380.0" text="Lost and Found Registry" GridPane.rowIndex="3" />
-                <Button fx:id="btn8" prefHeight="100.0" prefWidth="380.0" text="Restricted Zone Control" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Button onAction="#handleIncidentReportBtn" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10; -fx-cursor: hand;" text="Incident Reporting" GridPane.columnIndex="1">
+                    <font><Font name="System Bold" size="16.0" /></font></Button>
+
+                <Button onAction="#handleSurveillanceBtn" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10; -fx-cursor: hand;" text="Surveillance Operation" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="16.0" /></font></Button>
+
+                <Button onAction="#handleEmergencyBtn" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10; -fx-cursor: hand;" text="Emergency Response Log" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font><Font name="System Bold" size="16.0" /></font></Button>
+
+                <Button onAction="#handleCCTVBtn" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10; -fx-cursor: hand;" text="CCTV Monitoring" GridPane.rowIndex="2">
+                    <font><Font name="System Bold" size="16.0" /></font></Button>
+
+                <Button onAction="#handleVIPParkingBtn" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10; -fx-cursor: hand;" text="VIP Parking Allocation" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <font><Font name="System Bold" size="16.0" /></font></Button>
+
+                <Button onAction="#handleLostFoundBtn" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10; -fx-cursor: hand;" text="Lost and Found Registry" GridPane.rowIndex="3">
+                    <font><Font name="System Bold" size="16.0" /></font></Button>
+
+                <Button onAction="#handleRestrictedZoneBtn" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-color: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10; -fx-cursor: hand;" text="Restricted Zone Control" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <font><Font name="System Bold" size="16.0" /></font></Button>
             </children>
         </GridPane>
     </children>

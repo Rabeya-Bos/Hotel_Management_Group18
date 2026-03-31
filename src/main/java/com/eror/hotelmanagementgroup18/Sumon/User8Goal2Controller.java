@@ -1,5 +1,7 @@
 package com.eror.hotelmanagementgroup18.Sumon;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -14,53 +17,56 @@ public class User8Goal2Controller {
 
     @FXML private TextField typeField;
     @FXML private TextArea descArea;
-    @FXML private TableView<?> incidentTable;
-    @FXML private Button backBtn;
+    @FXML private TableView<Incident> incidentTable;
+    @FXML private TableColumn<Incident, String> colId, colType, colDesc;
 
+    private ObservableList<Incident> incidentList = FXCollections.observableArrayList();
+    private int reportCounter = 101;
 
     @FXML
-    private void handleSubmitReport(ActionEvent event) {
-        String incidentType = typeField.getText().trim();
-        String description = descArea.getText().trim();
+    public void initialize() {
 
-        // 1. Validation: Check if fields are empty
-        if (incidentType.isEmpty() || description.isEmpty()) {
-            showAlert("Missing Information", "Please provide both the incident type and a detailed description.");
-            return;
-        }
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        colDesc.setCellValueFactory(new PropertyValueFactory<>("description"));
 
-        // 2. Validation: Length check (ensure description is detailed enough)
-        if (description.length() < 10) {
-            showAlert("Detail Required", "Please provide more details in the description (at least 10 characters).");
-            return;
-        }
-
-        // Logic for successful submission (e.g., saving to database or list)
-        System.out.println("Incident Reported: " + incidentType);
-        showAlert("Report Submitted", "Incident report has been successfully recorded.");
-
-        clearFields();
+        incidentTable.setItems(incidentList);
     }
 
+    @FXML
+    void handleSubmitBtn(ActionEvent event) {
+        String type = typeField.getText().trim();
+        String desc = descArea.getText().trim();
+
+        if (type.isEmpty() || desc.isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Field Error", "Incident type and description are required!");
+            return;
+        }
+
+
+        String reportID = "INC-" + (reportCounter++);
+        incidentList.add(new Incident(reportID, type, desc));
+
+        showAlert(Alert.AlertType.INFORMATION, "Reported", "Incident " + reportID + " has been logged successfully.");
+
+
+        typeField.clear();
+        descArea.clear();
+    }
 
     @FXML
-    private void handleBackBtn(ActionEvent event) throws IOException {
+    void handleBackBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/eror/hotelmanagementgroup18/Sumon/Security_dashboard.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
     }
 
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private void showAlert(Alert.AlertType type, String title, String content) {
+        Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    private void clearFields() {
-        typeField.clear();
-        descArea.clear();
+        alert.setContentText(content);
+        alert.show();
     }
 }
