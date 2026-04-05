@@ -1,5 +1,11 @@
 package com.eror.hotelmanagementgroup18.urmi;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+
 public class Goal_2_stockUsageController
 {
     @javafx.fxml.FXML
