@@ -1,21 +1,20 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class Scene2AssignRoomsToGuests
-{
+import java.io.*;
+
+public class Scene2AssignRoomsToGuests {
+
     @javafx.fxml.FXML
-    private TableColumn ColGuestName;
+    private TableColumn<GuestRoom_Scene2, Integer> ColBookingId;
     @javafx.fxml.FXML
-    private TableColumn ColRoomType;
+    private TableColumn<GuestRoom_Scene2, String> ColGuestName;
     @javafx.fxml.FXML
-    private TableColumn ColBookingId;
-    @javafx.fxml.FXML
-    private TextField TXTRoomType;
+    private TableColumn<GuestRoom_Scene2, String> ColRoomType;
+
     @javafx.fxml.FXML
     private TextField TXTBookingID;
     @javafx.fxml.FXML
@@ -23,21 +22,109 @@ public class Scene2AssignRoomsToGuests
     @javafx.fxml.FXML
     private Label LVLResult;
     @javafx.fxml.FXML
-    private TableView TableView1;
+    private TableView<GuestRoom_Scene2> TableView1;
+    @javafx.fxml.FXML
+    private ComboBox<String> CmbRoomType;
 
     @javafx.fxml.FXML
     public void initialize() {
-    }
+        ColBookingId.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
+        ColGuestName.setCellValueFactory(new PropertyValueFactory<>("guestName"));
+        ColRoomType.setCellValueFactory(new PropertyValueFactory<>("roomType"));
 
-    @javafx.fxml.FXML
-    public void NextOA(ActionEvent actionEvent) {
+        CmbRoomType.getItems().addAll("Single", "Double", "Suite");
     }
 
     @javafx.fxml.FXML
     public void AssignRoomOA(ActionEvent actionEvent) {
+
+        String bookingIdText = TXTBookingID.getText();
+        String guestName = TXTGuestName.getText();
+        String roomType = CmbRoomType.getValue();
+
+        if (bookingIdText.isEmpty() || guestName.isEmpty() || roomType == null) {
+            LVLResult.setText("Fill all fields!");
+            return;
+        }
+
+        int bookingId = Integer.parseInt(bookingIdText);
+
+        //Get available room
+        Room_Scene1 room = AvailableRoomOA();
+
+        if (room == null) {
+            LVLResult.setText("No available room!");
+            return;
+        }
+
+        // Mark room occupied
+        room.setRoomStatus("Occupied");
+
+        //  Update file with this room
+        UpdateRoomFile(room);
+
+        //  Add to table
+        GuestRoom_Scene2 gr = new GuestRoom_Scene2(bookingId, guestName, roomType);
+        TableView1.getItems().add(gr);
+
+        LVLResult.setText("Room Assigned Successfully!");
     }
 
-    @javafx.fxml.FXML
-    public void BackOA(ActionEvent actionEvent) {
+    //  FIXED METHOD (no ActionEvent, correct return type)
+    public Room_Scene1 AvailableRoomOA() {
+
+        try (ObjectInputStream stream =
+                     new ObjectInputStream(new FileInputStream("room.bin"))) {
+
+            while (true) {
+                Room_Scene1 r = (Room_Scene1) stream.readObject();
+
+                String type = CmbRoomType.getValue();
+
+                if (r.getRoomType().equals(type) &&
+                        r.getRoomStatus().equals("Available")) {
+                    return r;
+                }
+            }
+
+        } catch (EOFException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    //  FIXED METHOD (takes Room object)
+    public void UpdateRoomFile(Room_Scene1 updatedRoom) {
+
+        File inputFile = new File("room.bin");
+        File tempFile = new File("temp.bin");
+
+        try (
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream(inputFile));
+                ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(tempFile))
+        ) {
+
+            while (true) {
+                Room_Scene1 r = (Room_Scene1) in.readObject();
+
+                // Replace updated room
+                if (r.getRoomNo() == updatedRoom.getRoomNo()) {
+                    out.writeObject(updatedRoom);
+                } else {
+                    out.writeObject(r);
+                }
+            }
+
+        } catch (EOFException e) {
+            // finished reading
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //  Replace file
+        inputFile.delete();
+        tempFile.renameTo(inputFile);
     }
 }

@@ -13,8 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="532.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Goal3LostFound">
+<AnchorPane prefHeight="558.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Goal3LostFound">
    <children>
       <Label layoutX="207.0" layoutY="23.0" text="Lost &amp; Found">
          <font>
@@ -87,16 +86,6 @@
             <TableColumn fx:id="ColValuable" prefWidth="80.00002034505212" text="Valuable" />
         </columns>
       </TableView>
-      <Button layoutX="28.0" layoutY="493.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="29.0" prefWidth="96.0" style="-fx-background-color: F825A0;" text="Back">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="434.0" layoutY="493.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="29.0" prefWidth="104.0" style="-fx-background-color: F825A0;" text="Next">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
       <TextField fx:id="TXTItemName" layoutX="93.0" layoutY="58.0" style="-fx-background-color: pink;" />
       <TextField fx:id="TXTFoundLocation" layoutX="428.0" layoutY="58.0" style="-fx-background-color: pink;" />
       <DatePicker fx:id="DateFound" layoutX="96.0" layoutY="105.0" style="-fx-background-color: Pink;" />
@@ -104,5 +93,7 @@
       <TextArea fx:id="TextArea" layoutX="96.0" layoutY="150.0" prefHeight="29.0" prefWidth="454.0" />
       <RadioButton fx:id="RBStatus" layoutX="110.0" layoutY="205.0" mnemonicParsing="false" style="-fx-background-color: Pink;" text="RadioButton" />
       <CheckBox fx:id="CBAditionalInfo" layoutX="421.0" layoutY="205.0" mnemonicParsing="false" style="-fx-background-color: Pink;" text="CheckBox" />
+      <Button layoutX="47.0" layoutY="507.0" mnemonicParsing="false" onAction="#BackOA" text="Back" />
+      <Button layoutX="458.0" layoutY="507.0" mnemonicParsing="false" onAction="#NextOA" text="Next" />
    </children>
 </AnchorPane>

@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="545.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Goal4UpdateProfile">
+<AnchorPane prefHeight="555.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Goal4UpdateProfile">
    <children>
       <Label layoutX="243.0" layoutY="14.0" text="Profile">
          <font>
@@ -28,8 +27,6 @@
       <Label layoutX="289.0" layoutY="180.0" text="Preference" />
       <Button layoutX="35.0" layoutY="224.0" mnemonicParsing="false" onAction="#UpdateProfileOA" prefHeight="25.0" prefWidth="162.0" style="-fx-background-color: #FDBAE1;" text="Update Profile" />
       <Button layoutX="307.0" layoutY="224.0" mnemonicParsing="false" onAction="#ClearOA" prefHeight="25.0" prefWidth="195.0" style="-fx-background-color: #FDBAE1;" text="Clear" />
-      <Button layoutX="35.0" layoutY="491.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: F825A0;" text="Back" />
-      <Button layoutX="440.0" layoutY="491.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: F825A0;" text="Next" />
       <TableView fx:id="TableView1" layoutX="31.0" layoutY="272.0" prefHeight="199.0" prefWidth="547.0">
         <columns>
           <TableColumn fx:id="ColUserID" prefWidth="75.0" text="User ID" />
@@ -49,5 +46,7 @@
       <TextField fx:id="TXTPhoneNumber" layoutX="116.0" layoutY="127.0" style="-fx-background-color: pink;" />
       <RadioButton fx:id="RBGender" layoutX="87.0" layoutY="180.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="RadioButton" />
       <RadioButton fx:id="RBPreference" layoutX="371.0" layoutY="180.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="RadioButton" />
+      <Button layoutX="44.0" layoutY="492.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="101.0" text="Back" />
+      <Button layoutX="413.0" layoutY="492.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="25.0" prefWidth="87.0" text="Next" />
    </children>
 </AnchorPane>

@@ -1,43 +1,118 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class Scene7ApplyDiscount
-{
+import java.io.*;
+
+public class Scene7ApplyDiscount {
+
     @javafx.fxml.FXML
     private Label LvlResult;
     @javafx.fxml.FXML
-    private TableColumn ColBookingID;
-    @javafx.fxml.FXML
     private TextField TxtDisscount;
     @javafx.fxml.FXML
-    private TableColumn ColRoomNO;
+    private TableColumn<BookingDiscount_Scene7, Integer> ColBookingID;
     @javafx.fxml.FXML
-    private TableColumn ColTotalAmount;
+    private TableColumn<BookingDiscount_Scene7, String> ColBookingName;
     @javafx.fxml.FXML
-    private TableColumn ColBookingName;
+    private TableColumn<BookingDiscount_Scene7, Integer> ColRoomNO;
     @javafx.fxml.FXML
-    private TableColumn ColStatus;
+    private TableColumn<BookingDiscount_Scene7, Double> ColTotalAmount;
     @javafx.fxml.FXML
-    private TableView TableView1;
+    private TableColumn<BookingDiscount_Scene7, String> ColStatus;
+    @javafx.fxml.FXML
+    private TableView<BookingDiscount_Scene7> TableView1;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        ColBookingID.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
+        ColBookingName.setCellValueFactory(new PropertyValueFactory<>("bookingName"));
+        ColRoomNO.setCellValueFactory(new PropertyValueFactory<>("roomNo"));
+        ColTotalAmount.setCellValueFactory(new PropertyValueFactory<>("totalAmount"));
+        ColStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        loadData();
     }
 
+    //  Load booking data
+    private void loadData() {
+
+        TableView1.getItems().clear();
+
+        try (ObjectInputStream stream =
+                     new ObjectInputStream(new FileInputStream("discount.bin"))) {
+
+            while (true) {
+                BookingDiscount_Scene7 b = (BookingDiscount_Scene7) stream.readObject();
+                TableView1.getItems().add(b);
+            }
+
+        } catch (EOFException e) {
+            // end
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //  Apply Discount
     @javafx.fxml.FXML
     public void ApplyOA(ActionEvent actionEvent) {
-    }
 
-    @javafx.fxml.FXML
-    public void NextOA(ActionEvent actionEvent) {
-    }
+        if (TxtDisscount.getText().isEmpty()) {
+            LvlResult.setText(" Enter discount!");
+            return;
+        }
 
-    @javafx.fxml.FXML
-    public void BackOA(ActionEvent actionEvent) {
+        BookingDiscount_Scene7 selected = TableView1.getSelectionModel().getSelectedItem();
+
+        if (selected == null) {
+            LvlResult.setText(" Select a booking!");
+            return;
+        }
+
+        double discount = Double.parseDouble(TxtDisscount.getText());
+
+        //  apply discount
+        double newAmount = selected.getTotalAmount() - discount;
+
+        if (newAmount < 0) newAmount = 0;
+
+        selected.setTotalAmount(newAmount);
+
+        //  update file
+        File inputFile = new File("discount.bin");
+        File tempFile = new File("temp.bin");
+
+        try (
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream(inputFile));
+                ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(tempFile))
+        ) {
+
+            while (true) {
+                BookingDiscount_Scene7 b = (BookingDiscount_Scene7) in.readObject();
+
+                if (b.getBookingId() == selected.getBookingId()) {
+                    out.writeObject(selected); // updated
+                } else {
+                    out.writeObject(b);
+                }
+            }
+
+        } catch (EOFException e) {
+            // done
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        inputFile.delete();
+        tempFile.renameTo(inputFile);
+
+        LvlResult.setText(" Discount Applied!");
+
+        loadData();
+        TxtDisscount.clear();
     }
 }

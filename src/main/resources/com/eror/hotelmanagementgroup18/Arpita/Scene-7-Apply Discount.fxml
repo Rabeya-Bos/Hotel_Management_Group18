@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="541.0" prefWidth="628.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Scene7ApplyDiscount">
+<AnchorPane prefHeight="508.0" prefWidth="628.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Scene7ApplyDiscount">
    <children>
       <Label layoutX="263.0" layoutY="23.0" text="Discount">
          <font>
@@ -46,16 +45,6 @@
         </columns>
       </TableView>
       <Button layoutX="185.0" layoutY="398.0" mnemonicParsing="false" onAction="#ApplyOA" prefHeight="25.0" prefWidth="225.0" style="-fx-background-color: #FDBAE1;" text="Apply">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="31.0" layoutY="492.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: F825A0;" text="Back">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="410.0" layoutY="492.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: F825A0;" text="Next">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

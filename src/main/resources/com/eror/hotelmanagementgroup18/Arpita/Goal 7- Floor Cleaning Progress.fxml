@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="277.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Arpita.Goal7FloorCleaningProgress">
+<AnchorPane prefHeight="336.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Arpita.Goal7FloorCleaningProgress">
    <children>
       <Label layoutX="205.0" layoutY="14.0" text="Floor Progress">
          <font>
@@ -31,5 +30,7 @@
       <ComboBox fx:id="CmbAssignedStaff" layoutX="424.0" layoutY="47.0" prefWidth="150.0" />
       <Button layoutX="89.0" layoutY="201.0" mnemonicParsing="false" onAction="#UpdateStatus" text="update Status" />
       <Button layoutX="357.0" layoutY="201.0" mnemonicParsing="false" onAction="#ClearOA" prefHeight="25.0" prefWidth="76.0" text="Clear" />
+      <Button layoutX="75.0" layoutY="272.0" mnemonicParsing="false" onAction="#BackOA" text="Back" />
+      <Button layoutX="407.0" layoutY="272.0" mnemonicParsing="false" onAction="#NextOA" text="Next" />
    </children>
 </AnchorPane>

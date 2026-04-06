@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="538.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Scene1ManageRoomAvailability">
    <children>
       <Label layoutX="110.0" layoutY="29.0" prefHeight="20.0" prefWidth="350.0" text="                        Room Management">
@@ -60,12 +59,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="110.0" layoutY="483.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="29.0" prefWidth="99.0" style="-fx-background-color: F825A0;" text="Back">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="378.0" layoutY="485.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: F825A0;" text="Next">
+      <Button layoutX="243.0" layoutY="494.0" mnemonicParsing="false" onAction="#SaveOA" prefHeight="29.0" prefWidth="99.0" style="-fx-background-color: F825A0;" text="Save">
          <font>
             <Font size="14.0" />
          </font>

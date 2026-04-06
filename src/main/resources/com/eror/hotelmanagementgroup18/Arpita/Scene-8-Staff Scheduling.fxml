@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Scene8StaffScheduling">
+<AnchorPane prefHeight="369.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.arpita.Scene8StaffScheduling">
    <children>
       <Label layoutX="218.0" layoutY="23.0" text="Staff Scheduling">
          <font>
@@ -46,16 +45,6 @@
          </font>
       </Button>
       <Button layoutX="427.0" layoutY="188.0" mnemonicParsing="false" onAction="#FilterOA" prefHeight="29.0" prefWidth="92.0" style="-fx-background-color: #FDBAE1;" text="Filter">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="38.0" layoutY="351.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="29.0" prefWidth="108.0" style="-fx-background-color: F825A0;" text="Back">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="425.0" layoutY="351.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="29.0" prefWidth="108.0" style="-fx-background-color: F825A0;" text="Next">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
