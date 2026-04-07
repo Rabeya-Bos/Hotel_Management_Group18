@@ -1,7 +1,11 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -87,10 +91,24 @@ public class Goal7FloorCleaningProgress {
     }
 
     @javafx.fxml.FXML
-    public void NextOA(ActionEvent actionEvent) {
+    public void next(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 8-Messages.fxml.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
-    public void BackOA(ActionEvent actionEvent) {
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 6-Shift Change Request.fxml.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
     }
 }

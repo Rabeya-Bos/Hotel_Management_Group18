@@ -1,8 +1,12 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.*;
 
@@ -36,7 +40,7 @@ public class Scene5LateCheckOutRequests
         loadRequests();
     }
 
-    // ✅ Load requests from file
+    //  Load requests from file
     private void loadRequests() {
         TableView1.getItems().clear();
 
@@ -114,4 +118,26 @@ public class Scene5LateCheckOutRequests
         TXTBookingName.clear();
         CmbDecision.setValue(null);
     }
+
+    @javafx.fxml.FXML
+    public void next(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 6-Seasonal Pricing.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
     }
+
+    @javafx.fxml.FXML
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 4-Approve Guest Check-In.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
+    }
+}

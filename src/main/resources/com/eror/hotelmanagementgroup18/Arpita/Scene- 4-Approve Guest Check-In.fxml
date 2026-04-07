@@ -51,5 +51,15 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Button layoutX="27.0" layoutY="481.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="29.0" prefWidth="139.0" style="-fx-background-color: #FDBAE1;" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="460.0" layoutY="481.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="29.0" prefWidth="133.0" style="-fx-background-color: #FDBAE1;" text="Next">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

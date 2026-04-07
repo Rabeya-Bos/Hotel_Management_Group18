@@ -1,8 +1,12 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -13,17 +17,20 @@ public class Scene6SeasonalPricing {
     private ComboBox<String> CmbSeason;
 
     @javafx.fxml.FXML
+    private TextField TXTPrice;
+
+    @javafx.fxml.FXML
     private DatePicker DPStartDate;
+
     @javafx.fxml.FXML
     private DatePicker DPEndDate;
 
     @javafx.fxml.FXML
-    private TextField TXTPrice;
+    private TableColumn<SeasonalPricing_Scene6, String> ColStartDate;
 
     @javafx.fxml.FXML
-    private TableColumn<SeasonalPricing_Scene6, String> ColStartDate;
-    @javafx.fxml.FXML
     private TableColumn<SeasonalPricing_Scene6, String> ColEndDate;
+
     @javafx.fxml.FXML
     private TableColumn<SeasonalPricing_Scene6, Double> ColPrice;
 
@@ -59,7 +66,7 @@ public class Scene6SeasonalPricing {
             }
 
         } catch (EOFException e) {
-            // end
+            // end of file → normal
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,7 +81,7 @@ public class Scene6SeasonalPricing {
                 DPEndDate.getValue() == null ||
                 TXTPrice.getText().isEmpty()) {
 
-            LVLResult.setText(" Fill all fields!");
+            LVLResult.setText("Fill all fields!");
             return;
         }
 
@@ -82,16 +89,23 @@ public class Scene6SeasonalPricing {
         LocalDate end = DPEndDate.getValue();
 
         if (end.isBefore(start)) {
-            LVLResult.setText(" End date must be after start date!");
+            LVLResult.setText("End date must be after start date!");
             return;
         }
 
-        double price = Double.parseDouble(TXTPrice.getText());
+        double price;
+
+        try {
+            price = Double.parseDouble(TXTPrice.getText()); // ✅ safe parsing
+        } catch (NumberFormatException e) {
+            LVLResult.setText("Invalid price!");
+            return;
+        }
 
         SeasonalPricing_Scene6 sp =
                 new SeasonalPricing_Scene6(start.toString(), end.toString(), price);
 
-        //  Save (append)
+        //  Save (append safely)
         try (ObjectOutputStream out =
                      new ObjectOutputStream(new FileOutputStream("season.bin", true)) {
 
@@ -105,9 +119,11 @@ public class Scene6SeasonalPricing {
 
         } catch (Exception e) {
             e.printStackTrace();
+            LVLResult.setText("Error saving data!");
+            return;
         }
 
-        LVLResult.setText(" Pricing Saved!");
+        LVLResult.setText("Pricing Saved!");
 
         loadData();
 
@@ -116,5 +132,28 @@ public class Scene6SeasonalPricing {
         CmbSeason.setValue(null);
         DPStartDate.setValue(null);
         DPEndDate.setValue(null);
+    }
+
+
+    @javafx.fxml.FXML
+    public void next(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-7-Apply Discount.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
+    }
+
+    @javafx.fxml.FXML
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 5- Late Check-Out Requests.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
     }
 }

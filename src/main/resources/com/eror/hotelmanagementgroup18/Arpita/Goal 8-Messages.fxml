@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="304.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Arpita.Goal8Messages">
+<AnchorPane prefHeight="355.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Arpita.Goal8Messages">
    <children>
       <Label layoutX="241.0" layoutY="14.0" text="Messages">
          <font>
@@ -32,5 +31,6 @@
       <TextArea fx:id="TextArea1" layoutX="373.0" layoutY="87.0" prefHeight="63.0" prefWidth="193.0" />
       <RadioButton fx:id="RBPriority" layoutX="79.0" layoutY="170.0" mnemonicParsing="false" text="RadioButton" />
       <CheckBox fx:id="CBOptions" layoutX="354.0" layoutY="170.0" mnemonicParsing="false" text="CheckBox" />
+      <Button layoutX="40.0" layoutY="294.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="466.0" text="Back" />
    </children>
 </AnchorPane>

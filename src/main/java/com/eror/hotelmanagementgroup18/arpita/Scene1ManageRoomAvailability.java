@@ -1,10 +1,14 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.text.BreakIterator;
@@ -111,4 +115,14 @@ public class Scene1ManageRoomAvailability
     }
 
 
+    @javafx.fxml.FXML
+    public void next(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 2_Assign Rooms to Guests.fxml.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
+    }
 }

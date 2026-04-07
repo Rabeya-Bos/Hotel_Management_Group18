@@ -59,7 +59,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="243.0" layoutY="494.0" mnemonicParsing="false" onAction="#SaveOA" prefHeight="29.0" prefWidth="99.0" style="-fx-background-color: F825A0;" text="Save">
+      <Button layoutX="47.0" layoutY="494.0" mnemonicParsing="false" onAction="#SaveOA" prefHeight="29.0" prefWidth="99.0" style="-fx-background-color: F825A0;" text="Save">
          <font>
             <Font size="14.0" />
          </font>
@@ -69,5 +69,10 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Button layoutX="378.0" layoutY="494.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="29.0" prefWidth="99.0" style="-fx-background-color: F825A0;" text="Next">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

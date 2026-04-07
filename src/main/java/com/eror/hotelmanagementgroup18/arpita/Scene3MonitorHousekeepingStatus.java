@@ -1,10 +1,14 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.*;
 
@@ -73,48 +77,14 @@ public class Scene3MonitorHousekeepingStatus
     }
 
     @javafx.fxml.FXML
-    public void NextOA(ActionEvent actionEvent) {
-        if (TXTRoomNo.getText().isEmpty() || TXTStatus.getText().isEmpty()) {
-            return;
-        }
+    public void next(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 4-Approve Guest Check-In.fxml.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
 
-        int roomNo = Integer.parseInt(TXTRoomNo.getText());
-        String newStatus = TXTStatus.getText();
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
 
-        File inputFile = new File("room.bin");
-        File tempFile = new File("temp.bin");
-
-        try (
-                ObjectInputStream in = new ObjectInputStream(new FileInputStream(inputFile));
-                ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(tempFile))
-        ) {
-
-            while (true) {
-                Room_Scene1 r = (Room_Scene1) in.readObject();
-
-                if (r.getRoomNo() == roomNo) {
-                    r.setRoomStatus(newStatus); // ✔ update status
-                }
-
-                out.writeObject(r);
-            }
-
-        } catch (EOFException e) {
-            // done
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // ✔ replace file
-        inputFile.delete();
-        tempFile.renameTo(inputFile);
-
-        // ✔ refresh table
-        loadTableData();
-
-        // ✔ clear fields
-        TXTRoomNo.clear();
-        TXTStatus.clear();
+        stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
@@ -123,8 +93,14 @@ public class Scene3MonitorHousekeepingStatus
     }
 
     @javafx.fxml.FXML
-    public void BackOA(ActionEvent actionEvent) {
-        System.out.println("Back button pressed");
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 2_Assign Rooms to Guests.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
     }
 
     @javafx.fxml.FXML

@@ -1,8 +1,12 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.*;
 
@@ -71,6 +75,7 @@ public class Scene2AssignRoomsToGuests {
     }
 
     //  FIXED METHOD (no ActionEvent, correct return type)
+    @javafx.fxml.FXML
     public Room_Scene1 AvailableRoomOA() {
 
         try (ObjectInputStream stream =
@@ -96,6 +101,7 @@ public class Scene2AssignRoomsToGuests {
     }
 
     //  FIXED METHOD (takes Room object)
+    @javafx.fxml.FXML
     public void UpdateRoomFile(Room_Scene1 updatedRoom) {
 
         File inputFile = new File("room.bin");
@@ -126,5 +132,27 @@ public class Scene2AssignRoomsToGuests {
         //  Replace file
         inputFile.delete();
         tempFile.renameTo(inputFile);
+    }
+
+    @javafx.fxml.FXML
+    public void next(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-3-Monitor Housekeeping Status.fxml.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
+    }
+
+    @javafx.fxml.FXML
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-1-Manage Room Availability.fxml.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
     }
 }

@@ -51,7 +51,9 @@
          </font>
       </Button>
       <ComboBox fx:id="CmbRoomType" layoutX="244.0" layoutY="127.0" prefWidth="150.0" style="-fx-background-color: pink;" />
-      <Button layoutX="238.0" layoutY="474.0" mnemonicParsing="false" onAction="#AvailableRoomOA" text="Available Room" />
-      <Button layoutX="441.0" layoutY="474.0" mnemonicParsing="false" onAction="#UpdateRoomFile" text="Update" />
+      <Button layoutX="65.0" layoutY="386.0" mnemonicParsing="false" onAction="#AvailableRoomOA" style="-fx-background-color: pink;" text="Available Room" />
+      <Button layoutX="478.0" layoutY="386.0" mnemonicParsing="false" onAction="#UpdateRoomFile" style="-fx-background-color: pink;" text="Update" />
+      <Button layoutX="39.0" layoutY="475.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: aqua;" text="Back" />
+      <Button layoutX="412.0" layoutY="475.0" mnemonicParsing="false" onAction="#NextOA" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: aqua;" text="Next" />
    </children>
 </AnchorPane>
