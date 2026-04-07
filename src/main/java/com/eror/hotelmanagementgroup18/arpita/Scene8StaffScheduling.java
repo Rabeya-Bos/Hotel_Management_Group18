@@ -1,7 +1,11 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.io.*;
 
@@ -125,5 +129,16 @@ public class Scene8StaffScheduling {
         CMBShift.setValue(null);
 
         LVLResult.setText("");
+    }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent)  throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-7-Apply Discount.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
     }
 }
