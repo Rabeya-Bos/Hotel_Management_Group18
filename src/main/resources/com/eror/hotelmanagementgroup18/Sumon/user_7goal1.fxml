@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal1Controller">
+    <children>
+        <Label layoutX="346.0" layoutY="20.0" text="Admin"><font><Font size="20.0" /></font></Label>
+        <Label layoutX="303.0" layoutY="50.0" text="Manage Inventory"><font><Font name="System Bold" size="18.0" /></font></Label>
+        <Button fx:id="backBtn" layoutX="680.0" layoutY="20.0" text="Back" />
+
+        <TextField fx:id="searchRoomIdField" layoutX="100.0" layoutY="100.0" promptText="Room ID" />
+        <TextField fx:id="categoryField" layoutX="100.0" layoutY="140.0" promptText="Category" />
+        <Button fx:id="searchBtn" layoutX="260.0" layoutY="140.0" text="Search" />
+
+        <TextField fx:id="addRoomIdField" layoutX="450.0" layoutY="100.0" promptText="Room ID" />
+        <ComboBox fx:id="floorCombo" layoutX="450.0" layoutY="140.0" prefWidth="80.0" promptText="Floor" />
+        <ComboBox fx:id="typeCombo" layoutX="540.0" layoutY="140.0" prefWidth="80.0" promptText="Type" />
+        <TextField fx:id="rateField" layoutX="450.0" layoutY="180.0" promptText="Rate" />
+        <Button fx:id="addBtn" layoutX="610.0" layoutY="180.0" text="Add" />
+
+        <TableView fx:id="inventoryTable" layoutX="50.0" layoutY="240.0" prefHeight="230.0" prefWidth="650.0">
+            <columns>
+                <TableColumn fx:id="colRoomId" prefWidth="100.0" text="Room ID" />
+                <TableColumn fx:id="colFloor" prefWidth="100.0" text="Floor" />
+                <TableColumn fx:id="colType" prefWidth="100.0" text="Type" />
+                <TableColumn fx:id="colRate" prefWidth="100.0" text="Rate" />
+                <TableColumn fx:id="colStatus" prefWidth="150.0" text="Status" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

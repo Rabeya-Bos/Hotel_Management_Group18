@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal2Controller">
+    <children>
+        <Button fx:id="backBtn" layoutX="680.0" layoutY="25.0" text="Back" />
+        <TextField fx:id="staffNameField" layoutX="80.0" layoutY="80.0" promptText="Name" />
+        <ComboBox fx:id="monthCombo" layoutX="80.0" layoutY="120.0" prefWidth="150.0" promptText="Month" />
+
+        <TextField fx:id="basePayField" layoutX="280.0" layoutY="100.0" promptText="Base Pay" />
+        <TextField fx:id="staffIdField" layoutX="280.0" layoutY="140.0" promptText="Staff ID" />
+
+        <TextField fx:id="overtimeField" layoutX="460.0" layoutY="100.0" promptText="Overtime" />
+        <TextField fx:id="bonusField" layoutX="460.0" layoutY="140.0" promptText="Service Bonus" />
+
+        <Button fx:id="processBtn" layoutX="620.0" layoutY="180.0" text="Process Payroll" />
+
+        <TableView fx:id="payrollTable" layoutX="50.0" layoutY="230.0" prefHeight="240.0" prefWidth="650.0">
+            <columns>
+                <TableColumn fx:id="colStaffId" prefWidth="100.0" text="Staff ID" />
+                <TableColumn fx:id="colName" prefWidth="150.0" text="Name" />
+                <TableColumn fx:id="colBasePay" prefWidth="120.0" text="Base Pay" />
+                <TableColumn fx:id="colOvertime" prefWidth="130.0" text="Overtime Bonus" />
+                <TableColumn fx:id="colTotal" prefWidth="140.0" text="Total Salary" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

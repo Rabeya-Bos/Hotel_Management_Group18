@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal6Controller">
+    <children>
+        <Label layoutX="250.0" layoutY="20.0" text="Financial Revenue Reporting">
+            <font><Font name="System Bold" size="22.0" /></font>
+        </Label>
+        <DatePicker fx:id="reportDate" layoutX="50.0" layoutY="70.0" promptText="Select Date Range" />
+        <Button layoutX="250.0" layoutY="70.0" text="Generate Aggregate Report" />
+        <TableView fx:id="revenueTable" layoutX="50.0" layoutY="120.0" prefHeight="330.0" prefWidth="650.0">
+            <columns>
+                <TableColumn text="Source (Room/Bar/Spa)" prefWidth="200" />
+                <TableColumn text="Daily Income" prefWidth="150" />
+                <TableColumn text="Monthly Trend" prefWidth="298" />
+            </columns>
+        </TableView>
+        <Button fx:id="backBtn" layoutX="680.0" layoutY="20.0" text="Back" />
+    </children>
+</AnchorPane>

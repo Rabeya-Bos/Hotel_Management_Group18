@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal4Controller">
+    <children>
+        <Label layoutX="260.0" layoutY="20.0" text="VIP Guest Management">
+            <font><Font name="System Bold" size="22.0" /></font>
+        </Label>
+        <TextField fx:id="guestIdField" layoutX="50.0" layoutY="70.0" promptText="Enter Guest ID" />
+        <Button layoutX="220.0" layoutY="70.0" text="Verify &amp; Load Profile" />
+        <TableView fx:id="vipTable" layoutX="50.0" layoutY="120.0" prefHeight="330.0" prefWidth="650.0">
+            <columns>
+                <TableColumn text="Guest Name" prefWidth="150" />
+                <TableColumn text="Loyalty Points" prefWidth="120" />
+                <TableColumn text="Status Tier" prefWidth="130" />
+                <TableColumn text="Visit History" prefWidth="248" />
+            </columns>
+        </TableView>
+        <Button fx:id="backBtn" layoutX="680.0" layoutY="20.0" text="Back" />
+    </children>
+</AnchorPane>

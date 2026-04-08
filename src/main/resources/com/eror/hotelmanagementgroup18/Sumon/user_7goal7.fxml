@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal7Controller">
+    <children>
+        <Label layoutX="260.0" layoutY="20.0" text="Supply Inventory Audit">
+            <font><Font name="System Bold" size="22.0" /></font>
+        </Label>
+        <TextField fx:id="vendorId" layoutX="50.0" layoutY="70.0" promptText="Vendor ID" />
+        <TextField fx:id="stockLevel" layoutX="220.0" layoutY="70.0" promptText="New Stock Level" />
+        <Button layoutX="380.0" layoutY="70.0" text="Update &amp; Audit" />
+        <TableView fx:id="inventoryTable" layoutX="50.0" layoutY="120.0" prefHeight="330.0" prefWidth="650.0">
+            <columns>
+                <TableColumn text="Item Name" prefWidth="150" />
+                <TableColumn text="Current Stock" prefWidth="120" />
+                <TableColumn text="Reorder Level" prefWidth="130" />
+                <TableColumn text="Audit Status" prefWidth="248" />
+            </columns>
+        </TableView>
+        <Button fx:id="backBtn" layoutX="680.0" layoutY="20.0" text="Back" />
+    </children>
+</AnchorPane>

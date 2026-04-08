@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User7Goal8Controller">
+    <children>
+        <Label layoutX="240.0" layoutY="20.0" text="Feedback &amp; Review Analysis">
+            <font><Font name="System Bold" size="22.0" /></font>
+        </Label>
+        <TextArea fx:id="responseArea" layoutX="50.0" layoutY="70.0" prefHeight="100.0" prefWidth="500.0" promptText="Enter response to guest..." />
+        <Button layoutX="560.0" layoutY="70.0" prefHeight="100.0" text="Save &amp; Notify" />
+        <TableView fx:id="reviewTable" layoutX="50.0" layoutY="190.0" prefHeight="280.0" prefWidth="650.0">
+            <columns>
+                <TableColumn text="Sentiment Score" prefWidth="120" />
+                <TableColumn text="Guest Comments" prefWidth="350" />
+                <TableColumn text="Service Quality Metric" prefWidth="178" />
+            </columns>
+        </TableView>
+        <Button fx:id="backBtn" layoutX="680.0" layoutY="20.0" text="Back" />
+    </children>
+</AnchorPane>
