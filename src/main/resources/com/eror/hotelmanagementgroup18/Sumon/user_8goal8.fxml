@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Sumon.User8Goal8Controller">
+    <children>
+        <Label layoutX="260.0" layoutY="20.0" text="Restricted Zone Control" textFill="RED">
+            <font><Font name="System Bold" size="20.0" /></font>
+        </Label>
+        <Label layoutX="50.0" layoutY="60.0" text="Live Access Monitoring: Server Room, Vault, Wine Cellar" />
+        <TableView fx:id="accessTable" layoutX="50.0" layoutY="90.0" prefHeight="380.0" prefWidth="650.0">
+            <columns>
+                <TableColumn text="Timestamp" prefWidth="150" />
+                <TableColumn text="Zone ID" prefWidth="150" />
+                <TableColumn text="Staff ID" prefWidth="150" />
+                <TableColumn text="Access Status" prefWidth="198" />
+            </columns>
+        </TableView>
+        <Button fx:id="backBtn" layoutX="680.0" layoutY="20.0" text="Back" />
+    </children>
+</AnchorPane>
