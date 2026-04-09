@@ -9,38 +9,37 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class guest4 {
+public class guest6 {
 
     @FXML
-    private Label availabilityLabel;
+    private CheckBox anonymousChk;
 
     @FXML
-    private TextArea healthNotesArea;
+    private TextArea commentsArea;
+
+    @FXML
+    private ComboBox<?> foodRatingCombo;
+
+    @FXML
+    private ComboBox<?> giftCombo;
 
     @FXML
     private Label msgLabel;
 
     @FXML
-    private DatePicker spaDate;
+    private CheckBox newsletterChk;
 
     @FXML
-    private ComboBox<?> therapistPrefCombo;
+    private Label photoCountLabel;
 
     @FXML
-    private ComboBox<?> timeSlotCombo;
+    private ComboBox<?> roomRatingCombo;
 
     @FXML
-    private ComboBox<?> treatmentSelectCombo;
+    private ComboBox<?> serviceRatingCombo;
 
     @FXML
-    void checkBtn(ActionEvent event) {
-
-    }
-
-    @FXML
-    void confirmBtn(ActionEvent event) {
-
-    }
+    private ComboBox<?> spaRatingCombo;
 
     @FXML
     void homeBtn(ActionEvent actionEvent) throws IOException {
@@ -55,6 +54,16 @@ public class guest4 {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    @FXML
+    void submitBtn(ActionEvent event) {
+
+    }
+
+    @FXML
+    void uploadBtn(ActionEvent event) {
 
     }
 

@@ -9,12 +9,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Login">
     <children>
-        <TextField fx:id="usernameField" layoutX="157.0" layoutY="189.0" prefHeight="39.0" prefWidth="369.0" promptText="USERNAME">
+        <TextField fx:id="usernameTextField" layoutX="157.0" layoutY="189.0" prefHeight="39.0" prefWidth="369.0" promptText="USERNAME">
             <font>
                 <Font size="18.0" />
             </font>
         </TextField>
-        <PasswordField fx:id="passwordField" layoutX="157.0" layoutY="248.0" prefHeight="39.0" prefWidth="369.0" promptText="PASSWORD">
+        <PasswordField fx:id="passwordTextField" layoutX="157.0" layoutY="248.0" prefHeight="39.0" prefWidth="369.0" promptText="PASSWORD">
             <font>
                 <Font size="18.0" />
             </font>

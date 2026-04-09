@@ -9,36 +9,40 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class guest4 {
+public class Receptionist7 {
 
     @FXML
-    private Label availabilityLabel;
+    private ComboBox<?> compensationCombo;
 
     @FXML
-    private TextArea healthNotesArea;
+    private TextArea complaintDetailsArea;
 
     @FXML
-    private Label msgLabel;
+    private TableColumn<?, ?> complaintIdCol;
 
     @FXML
-    private DatePicker spaDate;
+    private TableColumn<?, ?> complaintStatusCol;
 
     @FXML
-    private ComboBox<?> therapistPrefCombo;
+    private TableColumn<?, ?> complaintTypeCol;
 
     @FXML
-    private ComboBox<?> timeSlotCombo;
+    private TableView<?> complaintsTable;
 
     @FXML
-    private ComboBox<?> treatmentSelectCombo;
+    private TableColumn<?, ?> guestNameCol;
 
     @FXML
-    void checkBtn(ActionEvent event) {
-
-    }
+    private TableColumn<?, ?> priorityCol;
 
     @FXML
-    void confirmBtn(ActionEvent event) {
+    private TextArea resolutionNotesArea;
+
+    @FXML
+    private Label statusLabel;
+
+    @FXML
+    void escalateBtn(ActionEvent event) {
 
     }
 
@@ -49,12 +53,17 @@ public class guest4 {
             Scene scene = ((Button) actionEvent.getSource()).getScene();
             Stage stage = (Stage) scene.getWindow();
 
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("/com/eror/hotelmanagementgroup18/Rabeya/guestDashboard.fxml"));
+            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("/com/eror/hotelmanagementgroup18/Rabeya/ReceptionistDashboard.fxml"));
             Scene scene2 = new Scene(scene2FxmlLoader.load());
             stage.setScene(scene2);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    @FXML
+    void resolveBtn(ActionEvent event) {
 
     }
 

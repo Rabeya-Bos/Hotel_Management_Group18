@@ -1,7 +1,5 @@
 package com.eror.hotelmanagementgroup18.Rabeya;
 
-
-import com.eror.hotelmanagementgroup18.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,142 +7,66 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class guestDashboard {
 
-    @FXML
-    void guest1Btn(ActionEvent actionEvent) throws IOException {
-
+    // 🔁 Reusable method for switching scenes
+    private void switchScene(ActionEvent event, String fxmlFile) {
         try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("com/eror/hotelmanagementgroup18/Rabeya/guest1.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
+            Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
+    // 🎯 Buttons (clean and short)
+
     @FXML
-    void guest2Btn(ActionEvent actionEvent) throws IOException {
-
-        try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("com/eror/hotelmanagementgroup18/Rabeya/guest2.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void guest1Btn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/guest1.fxml");
     }
 
     @FXML
-    void guest3Btn(ActionEvent actionEvent) throws IOException {
-
-        try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("com/eror/hotelmanagementgroup18/Rabeya/guest3.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void guest2Btn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/guest2.fxml");
     }
 
     @FXML
-    void guest4Btn(ActionEvent actionEvent) throws IOException {
-
-        try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("com/eror/hotelmanagementgroup18/Rabeya/guest4.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void guest3Btn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/guest3.fxml");
     }
 
     @FXML
-    void guest5Btn(ActionEvent actionEvent) throws IOException {
-
-        try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("com/eror/hotelmanagementgroup18/Rabeya/guest5.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void guest4Btn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/guest4.fxml");
     }
 
     @FXML
-    void guest6Btn(ActionEvent actionEvent) throws IOException {
-
-        try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("com/eror/hotelmanagementgroup18/Rabeya/guest6.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void guest5Btn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/guest5.fxml");
     }
 
     @FXML
-    void guest7Btn(ActionEvent actionEvent) throws IOException {
-
-        try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("com/eror/hotelmanagementgroup18/Rabeya/guest7.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void guest6Btn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/guest6.fxml");
     }
 
     @FXML
-    void guest8Btn(ActionEvent actionEvent) throws IOException {
-
-        try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("com/eror/hotelmanagementgroup18/Rabeya/guest8.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void guest7Btn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/guest7.fxml");
     }
 
     @FXML
-    void logoutBtn(ActionEvent actionEvent) throws IOException {
+    void guest8Btn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/guest8.fxml");
+    }
 
-        try {
-            Scene scene = ((Button) actionEvent.getSource()).getScene();
-            Stage stage = (Stage) scene.getWindow();
-
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(Login.class.getResource("com/eror/hotelmanagementgroup18/Login.fxml"));
-            Scene scene2 = new Scene(scene2FxmlLoader.load());
-            stage.setScene(scene2);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-}}
+    // 🔓 Logout button (FIXED)
+    @FXML
+    void logoutBtn(ActionEvent event) {
+        switchScene(event, "/com/eror/hotelmanagementgroup18/Rabeya/Login.fxml");
+    }
+}

@@ -9,36 +9,25 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class guest4 {
+public class Receptionist2 {
 
     @FXML
-    private Label availabilityLabel;
+    private TextField aliasField;
 
     @FXML
-    private TextArea healthNotesArea;
+    private Label confirmationMsg;
 
     @FXML
-    private Label msgLabel;
+    private CheckBox ndaCheckBox;
 
     @FXML
-    private DatePicker spaDate;
+    private ComboBox<?> privacyLevelCombo;
 
     @FXML
-    private ComboBox<?> therapistPrefCombo;
+    private ComboBox<?> villaCombo;
 
     @FXML
-    private ComboBox<?> timeSlotCombo;
-
-    @FXML
-    private ComboBox<?> treatmentSelectCombo;
-
-    @FXML
-    void checkBtn(ActionEvent event) {
-
-    }
-
-    @FXML
-    void confirmBtn(ActionEvent event) {
+    void activateBtn(ActionEvent event) {
 
     }
 
@@ -49,7 +38,7 @@ public class guest4 {
             Scene scene = ((Button) actionEvent.getSource()).getScene();
             Stage stage = (Stage) scene.getWindow();
 
-            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("/com/eror/hotelmanagementgroup18/Rabeya/guestDashboard.fxml"));
+            FXMLLoader scene2FxmlLoader = new FXMLLoader(guestDashboard.class.getResource("/com/eror/hotelmanagementgroup18/Rabeya/ReceptionistDashboard.fxml"));
             Scene scene2 = new Scene(scene2FxmlLoader.load());
             stage.setScene(scene2);
         } catch (Exception e) {

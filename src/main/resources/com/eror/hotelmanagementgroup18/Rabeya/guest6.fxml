@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Rabeya.guest6">
+
+    <!-- Title -->
+    <Label layoutX="210.0" layoutY="15.0" text="VIP Feedback &amp; Review">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+
+    <!-- Ratings -->
+    <Label layoutX="50.0" layoutY="60.0" text="Room Rating:" />
+    <ComboBox fx:id="roomRatingCombo" layoutX="140.0" layoutY="55.0" prefWidth="100.0" />
+
+    <Label layoutX="260.0" layoutY="60.0" text="Service Rating:" />
+    <ComboBox fx:id="serviceRatingCombo" layoutX="360.0" layoutY="55.0" prefWidth="100.0" />
+
+    <Label layoutX="50.0" layoutY="95.0" text="Food Rating:" />
+    <ComboBox fx:id="foodRatingCombo" layoutX="140.0" layoutY="90.0" prefWidth="100.0" />
+
+    <Label layoutX="260.0" layoutY="95.0" text="Spa Rating:" />
+    <ComboBox fx:id="spaRatingCombo" layoutX="360.0" layoutY="90.0" prefWidth="100.0" />
+
+    <!-- Comments -->
+    <Label layoutX="50.0" layoutY="135.0" text="Your Comments:" />
+    <TextArea fx:id="commentsArea" layoutX="140.0" layoutY="130.0" prefHeight="80.0" prefWidth="350.0" promptText="Share your experience..." />
+
+    <!-- Photo Upload -->
+    <Label layoutX="50.0" layoutY="225.0" text="Photos:" />
+    <Button layoutX="140.0" layoutY="220.0" onAction="#uploadBtn" prefWidth="120.0" text="Choose Photos" />
+    <Label fx:id="photoCountLabel" layoutX="270.0" layoutY="225.0" text="No photos selected" />
+
+    <!-- Options -->
+    <CheckBox fx:id="anonymousChk" layoutX="140.0" layoutY="260.0" text="Submit Anonymously" />
+    <CheckBox fx:id="newsletterChk" layoutX="300.0" layoutY="260.0" text="Subscribe to Newsletter" />
+
+    <!-- Thank You Gift -->
+    <Label layoutX="50.0" layoutY="300.0" text="Thank You Gift:" />
+    <ComboBox fx:id="giftCombo" layoutX="140.0" layoutY="295.0" prefWidth="200.0" />
+
+    <!-- Buttons -->
+    <Button layoutX="200.0" layoutY="340.0" onAction="#submitBtn" prefWidth="130.0" text="Submit Feedback" />
+    <Button layoutX="350.0" layoutY="340.0" onAction="#homeBtn" prefWidth="130.0" text="Return Home" />
+
+    <!-- Message -->
+    <Label fx:id="msgLabel" layoutX="200.0" layoutY="375.0" text="" />
+
+</AnchorPane>

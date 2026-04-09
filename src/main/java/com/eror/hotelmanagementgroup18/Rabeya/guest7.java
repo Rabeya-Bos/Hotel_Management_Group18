@@ -9,38 +9,37 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class guest4 {
-
-    @FXML
-    private Label availabilityLabel;
-
-    @FXML
-    private TextArea healthNotesArea;
+public class guest7 {
 
     @FXML
     private Label msgLabel;
 
     @FXML
-    private DatePicker spaDate;
+    private Label pointsLabel;
 
     @FXML
-    private ComboBox<?> therapistPrefCombo;
+    private TableColumn<?, ?> pointsRequiredCol;
 
     @FXML
-    private ComboBox<?> timeSlotCombo;
+    private TableColumn<?, ?> rewardDescCol;
 
     @FXML
-    private ComboBox<?> treatmentSelectCombo;
+    private TableColumn<?, ?> rewardIdCol;
 
     @FXML
-    void checkBtn(ActionEvent event) {
-
-    }
+    private TableColumn<?, ?> rewardNameCol;
 
     @FXML
-    void confirmBtn(ActionEvent event) {
+    private ComboBox<?> rewardSelectCombo;
 
-    }
+    @FXML
+    private TableView<?> rewardsTable;
+
+    @FXML
+    private Label tierLabel;
+
+    @FXML
+    private DatePicker useDatePicker;
 
     @FXML
     void homeBtn(ActionEvent actionEvent) throws IOException {
@@ -55,6 +54,11 @@ public class guest4 {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    @FXML
+    void redeemBtn(ActionEvent event) {
 
     }
 

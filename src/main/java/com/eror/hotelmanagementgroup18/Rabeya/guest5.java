@@ -9,36 +9,46 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class guest4 {
+public class guest5 {
 
     @FXML
-    private Label availabilityLabel;
+    private TableColumn<?, ?> amountCol;
 
     @FXML
-    private TextArea healthNotesArea;
+    private TableView<?> billTable;
+
+    @FXML
+    private TextField cardNumberField;
+
+    @FXML
+    private PasswordField cvvField;
+
+    @FXML
+    private TableColumn<?, ?> descriptionCol;
+
+    @FXML
+    private DatePicker expiryDate;
+
+    @FXML
+    private TableColumn<?, ?> itemCol;
 
     @FXML
     private Label msgLabel;
 
     @FXML
-    private DatePicker spaDate;
+    private ComboBox<?> paymentMethodCombo;
 
     @FXML
-    private ComboBox<?> therapistPrefCombo;
+    private Label subtotalLabel;
 
     @FXML
-    private ComboBox<?> timeSlotCombo;
+    private Label taxLabel;
 
     @FXML
-    private ComboBox<?> treatmentSelectCombo;
+    private Label totalLabel;
 
     @FXML
-    void checkBtn(ActionEvent event) {
-
-    }
-
-    @FXML
-    void confirmBtn(ActionEvent event) {
+    void expressCheckoutBtn(ActionEvent event) {
 
     }
 
@@ -55,6 +65,11 @@ public class guest4 {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    @FXML
+    void payNowBtn(ActionEvent event) {
 
     }
 

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Rabeya.Receptionist4">
+
+    <!-- Title -->
+    <Label layoutX="225.0" layoutY="14.0" text="Suite Upgrade Management">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Pending Upgrade Requests Table -->
+    <Label layoutX="50.0" layoutY="60.0" text="Pending Upgrade Requests:" />
+    <TableView fx:id="pendingRequestsTable" layoutX="50.0" layoutY="80.0" prefHeight="120.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="requestIdCol" prefWidth="100.0" text="Request ID" />
+            <TableColumn fx:id="guestNameCol" prefWidth="150.0" text="Guest Name" />
+            <TableColumn fx:id="currentRoomCol" prefWidth="120.0" text="Current Room" />
+            <TableColumn fx:id="requestedSuiteCol" prefWidth="200.0" text="Requested Suite" />
+        </columns>
+    </TableView>
+
+    <!-- Select Request Button -->
+    <Button layoutX="300.0" layoutY="210.0" onAction="#selectRequestBtn" prefWidth="150.0" text="Select Request" />
+
+    <!-- Upgrade Eligibility Status -->
+    <Label layoutX="50.0" layoutY="250.0" text="Eligibility Status:" />
+    <Label fx:id="eligibilityLabel" layoutX="160.0" layoutY="250.0" prefWidth="300.0" text="Not checked" />
+
+    <!-- Available Luxury Suites Table -->
+    <Label layoutX="50.0" layoutY="290.0" text="Available Luxury Suites:" />
+    <TableView fx:id="availableSuitesTable" layoutX="50.0" layoutY="310.0" prefHeight="120.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="suiteNoCol" prefWidth="100.0" text="Suite No" />
+            <TableColumn fx:id="suiteTypeCol" prefWidth="200.0" text="Type" />
+            <TableColumn fx:id="suitePriceCol" prefWidth="120.0" text="Price/Night" />
+            <TableColumn fx:id="suiteViewCol" prefWidth="150.0" text="View" />
+        </columns>
+    </TableView>
+
+    <!-- Suite Selection ComboBox -->
+    <Label layoutX="50.0" layoutY="450.0" text="Select Suite:" />
+    <ComboBox fx:id="suiteSelectCombo" layoutX="150.0" layoutY="445.0" prefWidth="300.0" promptText="Choose a suite" />
+
+    <!-- Upgrade Charges -->
+    <Label layoutX="50.0" layoutY="490.0" text="Upgrade Charges:" />
+    <Label fx:id="chargesLabel" layoutX="150.0" layoutY="490.0" prefWidth="150.0" text="0.00" />
+
+    <!-- Confirm Upgrade Button -->
+    <Button layoutX="250.0" layoutY="530.0" onAction="#confirmUpgradeBtn" prefWidth="150.0" text="Confirm Upgrade" />
+
+    <!-- Confirmation Message -->
+    <Label fx:id="confirmationMsg" layoutX="150.0" layoutY="570.0" prefHeight="18.0" prefWidth="293.0" text="" wrapText="true" />
+   <Button layoutX="529.0" layoutY="530.0" onAction="#homeBtn" prefWidth="100.0" text="Return Home" />
+
+</AnchorPane>

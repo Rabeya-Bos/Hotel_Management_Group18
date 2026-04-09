@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.eror.hotelmanagementgroup18.Rabeya.ReceptionistDashboard"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Header -->
+    <Label layoutX="102.0" layoutY="30.0" text="Receptionist Dashboard">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+    <Button layoutX="355.0" layoutY="336.0" onAction="#logoutBtn" text="Logout" />
+
+    <!-- Goals Buttons - Row 1 -->
+    <Button layoutX="62.0" layoutY="106.0" onAction="#Receptionist1Btn" prefWidth="120.0" text="1. VIP Check-in" />
+    <Button layoutX="62.0" layoutY="154.0" onAction="#Receptionist2Btn" prefWidth="120.0" text="2. Private Arrival" />
+    <Button layoutX="62.0" layoutY="202.0" onAction="#Receptionist3Btn" prefWidth="120.0" text="3. Butler Service" />
+    <Button layoutX="62.0" layoutY="250.0" onAction="#Receptionist4Btn" prefWidth="120.0" text="4. Suite Upgrade" />
+
+    <!-- Goals Buttons - Row 2 -->
+    <Button layoutX="262.0" layoutY="106.0" onAction="#Receptionist5Btn" prefWidth="120.0" text="5. Loyalty Program" />
+    <Button layoutX="262.0" layoutY="151.0" onAction="#Receptionist6Btn" prefWidth="120.0" text="6. Private Events" />
+    <Button layoutX="262.0" layoutY="199.0" onAction="#Receptionist7btn" prefWidth="120.0" text="7. Complaints" />
+    <Button layoutX="262.0" layoutY="246.0" onAction="#Receptionist8Btn" prefWidth="120.0" text="8. VIP Check-out" />
+
+
+
+</AnchorPane>
