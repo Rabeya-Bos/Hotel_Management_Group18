@@ -1,6 +1,7 @@
 module com.eror.hotelmanagementgroup18 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens com.eror.hotelmanagementgroup18 to javafx.fxml;
