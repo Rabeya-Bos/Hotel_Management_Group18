@@ -1,5 +1,11 @@
 package com.eror.hotelmanagementgroup18.urmi;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+
 public class Goal_12_refundAdjustmentController
 {
     @javafx.fxml.FXML
