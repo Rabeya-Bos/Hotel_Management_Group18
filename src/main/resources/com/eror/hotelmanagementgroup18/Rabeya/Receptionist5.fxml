@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Rabeya.Receptionist5">
+
+    <!-- Title -->
+    <Label layoutX="220.0" layoutY="20.0" text="Loyalty Program Management">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Search Member Section -->
+    <Label layoutX="50.0" layoutY="70.0" text="Search Member:" />
+    <TextField fx:id="searchMemberField" layoutX="150.0" layoutY="65.0" prefWidth="200.0" promptText="Enter Member ID or Name" />
+    <Button layoutX="430.0" layoutY="115.0" onAction="#searchMemberBtn" prefWidth="120.0" text="Search Member" />
+
+    <!-- Member Details -->
+    <Label layoutX="50.0" layoutY="110.0" text="Member Name:" />
+    <Label fx:id="memberNameLabel" layoutX="150.0" layoutY="110.0" prefWidth="200.0" text="-" />
+
+    <Label layoutX="50.0" layoutY="140.0" text="Current Tier:" />
+    <Label fx:id="tierLabel" layoutX="150.0" layoutY="140.0" prefWidth="200.0" text="-" />
+
+    <Label layoutX="50.0" layoutY="170.0" text="Points Balance:" />
+    <Label fx:id="pointsLabel" layoutX="150.0" layoutY="170.0" prefWidth="200.0" text="0" />
+
+    <!-- Available Rewards Table -->
+    <Label layoutX="50.0" layoutY="210.0" text="Available Rewards:" />
+    <TableView fx:id="rewardsTable" layoutX="50.0" layoutY="230.0" prefHeight="150.0" prefWidth="550.0">
+        <columns>
+            <TableColumn fx:id="rewardIdCol" prefWidth="80.0" text="Reward ID" />
+            <TableColumn fx:id="rewardNameCol" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="pointsNeededCol" prefWidth="100.0" text="Points Needed" />
+            <TableColumn fx:id="descriptionCol" prefWidth="200.0" text="Description" />
+        </columns>
+    </TableView>
+
+    <!-- Select Reward -->
+    <Label layoutX="50.0" layoutY="400.0" text="Select Reward:" />
+    <ComboBox fx:id="rewardSelectCombo" layoutX="150.0" layoutY="395.0" prefWidth="250.0" promptText="Choose a reward" />
+
+    <!-- Add Points Section -->
+    <Label layoutX="50.0" layoutY="440.0" text="Points to Add:" />
+    <TextField fx:id="pointsToAddField" layoutX="150.0" layoutY="435.0" prefWidth="150.0" promptText="Enter points" />
+    <Button layoutX="310.0" layoutY="435.0" onAction="#addPointsBtn" prefWidth="100.0" text="Add Points" />
+
+    <!-- Redeem Reward Button -->
+    <Button layoutX="250.0" layoutY="480.0" onAction="#redeemBtn" prefWidth="150.0" text="Redeem Reward" />
+
+    <!-- Confirmation Message -->
+    <Label fx:id="confirmationMsg" layoutX="75.0" layoutY="520.0" prefWidth="400.0" text="" wrapText="true" />
+   <Button layoutX="500.0" layoutY="516.0" onAction="#homeBtn" prefWidth="100.0" text="Return Home" />
+
+</AnchorPane>

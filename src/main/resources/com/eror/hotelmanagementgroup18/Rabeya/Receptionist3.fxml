@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="520.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Rabeya.Receptionist3">
+
+    <!-- Title -->
+    <Label layoutX="211.0" layoutY="22.0" text="Butler Service Assignment">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Guest Search Section -->
+    <Label layoutX="50.0" layoutY="70.0" text="Search Guest:" />
+    <TextField fx:id="searchGuestField" layoutX="150.0" layoutY="65.0" prefWidth="200.0" promptText="Enter Guest Name or ID" />
+    <Button layoutX="360.0" layoutY="65.0" onAction="#searchGuestBtn" prefWidth="120.0" text="Search Guest" />
+
+    <!-- VIP Tier Display -->
+    <Label layoutX="50.0" layoutY="110.0" text="VIP Tier:" />
+    <Label fx:id="vipTierLabel" layoutX="150.0" layoutY="110.0" prefWidth="200.0" text="Not checked" />
+
+    <!-- Available Butlers Table -->
+    <Label layoutX="50.0" layoutY="150.0" text="Available Butlers:" />
+    <TableView fx:id="butlersTable" layoutX="50.0" layoutY="170.0" prefHeight="130.0" prefWidth="550.0">
+        <columns>
+            <TableColumn fx:id="nameCol" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="specializationCol" prefWidth="250.0" text="Specialization" />
+            <TableColumn fx:id="statusCol" prefWidth="100.0" text="Status" />
+        </columns>
+    </TableView>
+
+    <!-- Butler Selection ComboBox -->
+    <Label layoutX="50.0" layoutY="320.0" text="Select Butler:" />
+    <ComboBox fx:id="butlerSelectCombo" layoutX="150.0" layoutY="315.0" prefWidth="250.0" promptText="Choose a butler" />
+
+    <!-- Guest Preferences -->
+    <Label layoutX="50.0" layoutY="360.0" text="Guest Preferences:" />
+    <TextArea fx:id="preferencesArea" layoutX="150.0" layoutY="355.0" prefHeight="60.0" prefWidth="350.0" promptText="Enter special requests..." />
+
+    <!-- Service Start Date -->
+    <Label layoutX="50.0" layoutY="430.0" text="Service Start Date:" />
+    <DatePicker fx:id="startDatePicker" layoutX="150.0" layoutY="425.0" prefWidth="150.0" />
+
+    <!-- Assign Butler Button -->
+    <Button layoutX="250.0" layoutY="470.0" onAction="#assignBtn" prefWidth="150.0" text="Assign Butler" />
+
+    <!-- Confirmation Message -->
+    <Label fx:id="confirmationMsg" layoutX="41.0" layoutY="500.0" prefWidth="400.0" text="" wrapText="true" />
+   <Button layoutX="519.0" layoutY="483.0" onAction="#homeBtn" prefWidth="100.0" text="Return Home" />
+
+</AnchorPane>

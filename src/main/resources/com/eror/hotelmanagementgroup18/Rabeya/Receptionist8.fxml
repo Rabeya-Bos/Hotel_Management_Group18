@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Rabeya.Receptionist8">
+
+    <!-- Title - &amp; ব্যবহার করা হয়েছে (লাইন 13) -->
+    <Label layoutX="250.0" layoutY="20.0" text="VIP Departure &amp; Feedback">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Guest ID Section -->
+    <Label layoutX="50.0" layoutY="70.0" text="Guest ID:" />
+    <TextField fx:id="guestIdField" layoutX="130.0" layoutY="65.0" prefWidth="200.0" promptText="Enter Guest ID" />
+    <Button layoutX="340.0" layoutY="65.0" onAction="#loadBillBtn" prefWidth="100.0" text="Load Bill" />
+
+    <!-- Bill Table -->
+    <Label layoutX="50.0" layoutY="110.0" text="Bill Items:" />
+    <TableView fx:id="billTable" layoutX="50.0" layoutY="130.0" prefHeight="120.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="itemCol" prefWidth="200.0" text="Item" />
+            <TableColumn fx:id="descriptionCol" prefWidth="200.0" text="Description" />
+            <TableColumn fx:id="amountCol" prefWidth="100.0" text="Amount" />
+        </columns>
+    </TableView>
+
+    <!-- Bill Summary -->
+    <Label layoutX="450.0" layoutY="260.0" text="Subtotal:" />
+    <Label fx:id="subtotalLabel" layoutX="520.0" layoutY="260.0" text="0.00" />
+
+    <Label layoutX="450.0" layoutY="285.0" text="Tax (10%):" />
+    <Label fx:id="taxLabel" layoutX="520.0" layoutY="285.0" text="0.00" />
+
+    <Label layoutX="450.0" layoutY="310.0" text="Total:" />
+    <Label fx:id="totalLabel" layoutX="520.0" layoutY="310.0" text="0.00" />
+
+    <!-- Payment Section -->
+    <Label layoutX="50.0" layoutY="260.0" text="Payment Method:" />
+    <ComboBox fx:id="paymentMethodCombo" layoutX="160.0" layoutY="255.0" prefWidth="150.0" />
+
+    <Label layoutX="50.0" layoutY="300.0" text="Gift Option:" />
+    <ComboBox fx:id="giftCombo" layoutX="160.0" layoutY="295.0" prefWidth="200.0" />
+
+    <!-- Action Buttons -->
+    <Button layoutX="200.0" layoutY="350.0" onAction="#processPaymentBtn" prefWidth="150.0" text="Process Payment" />
+    <Button layoutX="370.0" layoutY="350.0" onAction="#emailInvoiceBtn" prefWidth="120.0" text="Email Invoice" />
+
+    <!-- Feedback Section -->
+    <Label layoutX="50.0" layoutY="400.0" text="Guest Feedback:" />
+    <TextArea fx:id="feedbackArea" layoutX="160.0" layoutY="395.0" prefHeight="60.0" prefWidth="400.0" promptText="Ask guest for feedback..." />
+
+    <Button fx:id="requestFeedbackBtn" layoutX="280.0" layoutY="470.0" prefWidth="150.0" text="Request Feedback" />
+
+    <!-- Confirmation Message -->
+    <Label fx:id="confirmationMsg" layoutX="150.0" layoutY="520.0" prefWidth="450.0" text="" wrapText="true" />
+   <Button layoutX="574.0" layoutY="546.0" onAction="#homeBtn" prefWidth="100.0" text="Return Home" />
+
+</AnchorPane>

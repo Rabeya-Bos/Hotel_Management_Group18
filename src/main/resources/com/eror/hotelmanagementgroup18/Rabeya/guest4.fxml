@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Rabeya.guest4">
+
+    <!-- Title - &amp; ব্যবহার করা হয়েছে -->
+    <Label layoutX="200.0" layoutY="15.0" text="Spa &amp; Wellness">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Treatment Selection -->
+    <Label layoutX="30.0" layoutY="60.0" text="Treatment:" />
+    <ComboBox fx:id="treatmentSelectCombo" layoutX="120.0" layoutY="55.0" prefWidth="200.0" />
+
+    <!-- Date Selection -->
+    <Label layoutX="30.0" layoutY="100.0" text="Date:" />
+    <DatePicker fx:id="spaDate" layoutX="120.0" layoutY="95.0" prefWidth="150.0" />
+
+    <!-- Time Selection -->
+    <Label layoutX="300.0" layoutY="100.0" text="Time:" />
+    <ComboBox fx:id="timeSlotCombo" layoutX="360.0" layoutY="95.0" prefWidth="120.0" />
+
+    <!-- Therapist Preference -->
+    <Label layoutX="30.0" layoutY="140.0" text="Therapist:" />
+    <ComboBox fx:id="therapistPrefCombo" layoutX="120.0" layoutY="135.0" prefWidth="150.0" />
+
+    <!-- Health Concerns -->
+    <Label layoutX="30.0" layoutY="180.0" text="Health Notes:" />
+    <TextArea fx:id="healthNotesArea" layoutX="120.0" layoutY="175.0" prefHeight="60.0" prefWidth="350.0" />
+
+    <!-- Check Availability Button -->
+    <Button layoutX="480.0" layoutY="135.0" onAction="#checkBtn" prefWidth="80.0" text="Check" />
+    <Label fx:id="availabilityLabel" layoutX="120.0" layoutY="245.0" text="Not checked" />
+
+    <!-- Buttons -->
+    <Button layoutX="150.0" layoutY="300.0" onAction="#confirmBtn" prefWidth="130.0" text="Confirm Booking" />
+    <Button layoutX="320.0" layoutY="300.0" onAction="#homeBtn" prefWidth="130.0" text="Return Home" />
+
+    <!-- Confirmation Message -->
+    <Label fx:id="msgLabel" layoutX="150.0" layoutY="350.0" text="" />
+
+</AnchorPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.Rabeya.Receptionist6">
+
+    <!-- Title -->
+    <Label layoutX="250.0" layoutY="20.0" text="Private Event Booking">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Guest Name -->
+    <Label layoutX="50.0" layoutY="70.0" text="Guest Name:" />
+    <TextField fx:id="guestNameField" layoutX="150.0" layoutY="65.0" prefWidth="250.0" promptText="Enter guest name" />
+
+    <!-- Event Type -->
+    <Label layoutX="50.0" layoutY="110.0" text="Event Type:" />
+    <ComboBox fx:id="eventTypeCombo" layoutX="150.0" layoutY="105.0" prefWidth="200.0" promptText="Select event type" />
+
+    <!-- Event Dates -->
+    <Label layoutX="50.0" layoutY="150.0" text="Start Date:" />
+    <DatePicker fx:id="startDatePicker" layoutX="150.0" layoutY="145.0" prefWidth="150.0" />
+
+    <Label layoutX="320.0" layoutY="150.0" text="End Date:" />
+    <DatePicker fx:id="endDatePicker" layoutX="400.0" layoutY="145.0" prefWidth="150.0" />
+
+    <!-- Guest Count -->
+    <Label layoutX="50.0" layoutY="190.0" text="Guest Count:" />
+    <ComboBox fx:id="guestCountCombo" layoutX="150.0" layoutY="185.0" prefWidth="100.0" promptText="Select" />
+
+    <!-- Available Venues Table -->
+    <Label layoutX="50.0" layoutY="230.0" text="Available Venues:" />
+    <TableView fx:id="venuesTable" layoutX="50.0" layoutY="250.0" prefHeight="150.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="venueIdCol" prefWidth="80.0" text="Venue ID" />
+            <TableColumn fx:id="venueNameCol" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="capacityCol" prefWidth="80.0" text="Capacity" />
+            <TableColumn fx:id="priceCol" prefWidth="100.0" text="Price" />
+            <TableColumn fx:id="statusCol" prefWidth="80.0" text="Status" />
+        </columns>
+    </TableView>
+
+    <!-- Catering Menu -->
+    <Label layoutX="50.0" layoutY="420.0" text="Catering Menu:" />
+    <ComboBox fx:id="cateringCombo" layoutX="150.0" layoutY="415.0" prefWidth="250.0" promptText="Select catering package" />
+
+    <!-- Special Requirements -->
+    <Label layoutX="50.0" layoutY="460.0" text="Special Requirements:" />
+    <TextArea fx:id="requirementsArea" layoutX="150.0" layoutY="455.0" prefHeight="60.0" prefWidth="400.0" promptText="Enter any special requests..." />
+
+    <!-- Check Availability Button & Status -->
+    <Button layoutX="150.0" layoutY="530.0" onAction="#checkAvailabilityBtn" prefWidth="150.0" text="Check Availability" />
+    <Label fx:id="availabilityLabel" layoutX="320.0" layoutY="535.0" prefWidth="200.0" text="Not checked" />
+
+    <!-- Confirm Event Button -->
+    <Button layoutX="250.0" layoutY="570.0" onAction="#confirmEventBtn" prefWidth="150.0" text="Confirm Event" />
+
+    <!-- Confirmation Message -->
+    <Label fx:id="confirmationMsg" layoutX="150.0" layoutY="610.0" prefWidth="450.0" text="" wrapText="true" />
+   <Button layoutX="542.0" layoutY="557.0" onAction="#homeBtn" prefWidth="100.0" text="Return Home" />
+
+</AnchorPane>
