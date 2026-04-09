@@ -4,5 +4,6 @@ module com.eror.hotelmanagementgroup18 {
 
 
     opens com.eror.hotelmanagementgroup18 to javafx.fxml;
+    opens com.eror.hotelmanagementgroup18.Rabeya to javafx.fxml;
     exports com.eror.hotelmanagementgroup18;
 }
