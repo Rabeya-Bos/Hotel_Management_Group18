@@ -119,9 +119,20 @@ public class Scene5LateCheckOutRequests
         CmbDecision.setValue(null);
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void next(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 6-Seasonal Pricing.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 6-SeasonalPricing.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
+    }
+
+    @Deprecated
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 4-ApproveGuestCheck-In.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
@@ -131,13 +142,10 @@ public class Scene5LateCheckOutRequests
     }
 
     @javafx.fxml.FXML
-    public void back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 4-Approve Guest Check-In.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+    public void NextOA(ActionEvent actionEvent) {
+    }
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
-        stage.setScene(scene);
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }

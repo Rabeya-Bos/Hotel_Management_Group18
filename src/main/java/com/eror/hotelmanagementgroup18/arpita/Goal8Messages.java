@@ -91,7 +91,7 @@ public class Goal8Messages {
 
     @Deprecated
     public void back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 7- Floor Cleaning Progress.fxml.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 7-FloorCleaningProgress.fxml.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();

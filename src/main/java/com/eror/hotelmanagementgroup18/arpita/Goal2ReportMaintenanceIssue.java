@@ -12,7 +12,10 @@ import java.io.*;
 public class Goal2ReportMaintenanceIssue {
 
     @javafx.fxml.FXML
-    private RadioButton RDOStatus;
+    private RadioButton RBOpen, RBInProgress;
+
+    @javafx.fxml.FXML
+    private ToggleGroup statusGroup;
 
     @javafx.fxml.FXML
     private TextField TXTRoomNumber;
@@ -24,33 +27,27 @@ public class Goal2ReportMaintenanceIssue {
     private ComboBox<String> CmbIssueType;
 
     @javafx.fxml.FXML
-    private CheckBox CBAditionalFlags;
+    private CheckBox CBAdditionalFlags;
 
     @javafx.fxml.FXML
     private TextArea TXTAreaIssuesDescription;
 
     @javafx.fxml.FXML
-    private Label LVLResult; // ✅ FIXED (was missing)
+    private Label LVLResult;
 
     @javafx.fxml.FXML
     public void initialize() {
 
         CmbIssueType.getItems().addAll(
-                "Electrical",
-                "Plumbing",
-                "Furniture",
-                "AC",
-                "Other"
+                "Electrical", "Plumbing", "Furniture", "AC", "Other"
         );
 
         CmbSecurityLevel.getItems().addAll(
-                "Low",
-                "Medium",
-                "High"
+                "Low", "Medium", "High"
         );
     }
 
-    //  Submit Report
+    // Submit Report
     @javafx.fxml.FXML
     public void SubmitReportOA(ActionEvent actionEvent) {
 
@@ -75,19 +72,27 @@ public class Goal2ReportMaintenanceIssue {
         String type = CmbIssueType.getValue();
         String severity = CmbSecurityLevel.getValue();
         String description = TXTAreaIssuesDescription.getText();
-        String status = RDOStatus.isSelected() ? "Open" : "In Progress";
-        String flag = CBAditionalFlags.isSelected() ? "Urgent" : "Normal";
+
+        String status;
+        if (RBOpen.isSelected()) {
+            status = "Open";
+        } else if (RBInProgress.isSelected()) {
+            status = "In Progress";
+        } else {
+            showResult("Select status!");
+            return;
+        }
+
+        String flag = CBAdditionalFlags.isSelected() ? "Urgent" : "Normal";
 
         MaintenanceIssue_Goal2 issue =
                 new MaintenanceIssue_Goal2(roomNo, type, severity, description, status, flag);
 
-        //  FIXED try syntax
         try (ObjectOutputStream out =
                      new ObjectOutputStream(new FileOutputStream("maintenance.bin", true)) {
 
-                         @Override
                          protected void writeStreamHeader() throws IOException {
-                             reset(); // prevents header corruption
+                             reset();
                          }
                      }) {
 
@@ -103,14 +108,7 @@ public class Goal2ReportMaintenanceIssue {
         ClearOA(null);
     }
 
-    //  Update
-    @javafx.fxml.FXML
-    public void UpdateOA(ActionEvent actionEvent) {
-        SubmitReportOA(actionEvent);
-        showResult("Report Updated!");
-    }
-
-    //  Clear
+    // Clear
     @javafx.fxml.FXML
     public void ClearOA(ActionEvent actionEvent) {
 
@@ -118,41 +116,31 @@ public class Goal2ReportMaintenanceIssue {
         CmbIssueType.setValue(null);
         CmbSecurityLevel.setValue(null);
         TXTAreaIssuesDescription.clear();
-        CBAditionalFlags.setSelected(false);
-        RDOStatus.setSelected(false);
+        CBAdditionalFlags.setSelected(false);
+        statusGroup.selectToggle(null);
 
         showResult("");
     }
 
-    //  helper
+    // helper
     private void showResult(String msg) {
-        if (LVLResult != null) {
-            LVLResult.setText(msg);
-        } else {
-            System.out.println(msg);
-        }
+        LVLResult.setText(msg);
     }
 
-
-    @javafx.fxml.FXML
+    // Navigation
     public void next(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 3-Lost & Found.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 3-Lost&Found.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
+        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
 
-    @javafx.fxml.FXML
     public void back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 1- Update Cleaning Status.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 1-UpdateCleaningStatus.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
+        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
 }

@@ -14,42 +14,42 @@ public class Manager {
 
     @javafx.fxml.FXML
     public void StaffSchedulingOA(ActionEvent actionEvent) {
-        selectedPage = "Scene-8-Staff Scheduling.fxml";
+        selectedPage = "Scene-8-StaffScheduling.fxml";
     }
 
     @javafx.fxml.FXML
     public void HousekeepingStatusOA(ActionEvent actionEvent) {
-        selectedPage = "Scene-3-Monitor Housekeeping Status.fxml";
+        selectedPage = "Scene-3-MonitorHousekeepingStatus.fxml";
     }
 
     @javafx.fxml.FXML
     public void CheckINRequestOA(ActionEvent actionEvent) {
-        selectedPage = "Scene- 4-Approve Guest Check-In.fxml";
+        selectedPage = "Scene- 4-ApproveGuestCheck-In.fxml";
     }
 
     @javafx.fxml.FXML
     public void DisscountOA(ActionEvent actionEvent) {
-        selectedPage = "Scene-7-Apply Discount.fxml";
+        selectedPage = "Scene-7-ApplyDiscount.fxml";
     }
 
     @javafx.fxml.FXML
     public void GuestBookingOA(ActionEvent actionEvent) {
-        selectedPage = "Scene- 2_Assign Rooms to Guests.fxml";
+        selectedPage = "Scene- 2_AssignRoomstoGuests.fxml";
     }
 
     @javafx.fxml.FXML
     public void PricingOA(ActionEvent actionEvent) {
-        selectedPage = "Scene- 6-Seasonal Pricing.fxml";
+        selectedPage = "Scene- 6-SeasonalPricing.fxml";
     }
 
     @javafx.fxml.FXML
     public void LateCheckoutOA(ActionEvent actionEvent) {
-        selectedPage = "Scene- 5- Late Check-Out Requests.fxml";
+        selectedPage = "Scene- 5-LateCheck-OutRequests.fxml";
     }
 
     @javafx.fxml.FXML
     public void RoomManagemenOA(ActionEvent actionEvent) {
-        selectedPage = "Scene-1-Manage Room Availability.fxml"; // important
+        selectedPage = "Scene-1-ManageRoomAvailability.fxml"; // important
     }
 
     @javafx.fxml.FXML

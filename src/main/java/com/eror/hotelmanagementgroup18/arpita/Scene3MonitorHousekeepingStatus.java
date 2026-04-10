@@ -1,8 +1,6 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
 import com.eror.hotelmanagementgroup18.HelloApplication;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,39 +10,31 @@ import javafx.stage.Stage;
 
 import java.io.*;
 
-public class Scene3MonitorHousekeepingStatus
-{
+public class Scene3MonitorHousekeepingStatus {
+
     @javafx.fxml.FXML
-    private TableColumn<Room_Scene1,Integer> ColRoomNumber;
+    private TableColumn<Room_Scene1, Integer> ColRoomNumber;
+
     @javafx.fxml.FXML
-    private TextField TXTRoomNo;
-    @javafx.fxml.FXML
-    private TextField TXTStatus;
-    @javafx.fxml.FXML
-    private TableColumn<Room_Scene1,String> ColStatus;
+    private TableColumn<Room_Scene1, String> ColStatus;
+
     @javafx.fxml.FXML
     private TableView<Room_Scene1> TableView1;
 
+    // ✅ ADD THESE (missing before)
     @javafx.fxml.FXML
-    private RadioButton RBAll;
-    @javafx.fxml.FXML
-    private RadioButton RBClean;
-    @javafx.fxml.FXML
-    private RadioButton RBDirty;
-    @javafx.fxml.FXML
-    private RadioButton RBInProgress;
+    private RadioButton RBAll, RBClean, RBDirty, RBInProgress;
 
     @javafx.fxml.FXML
     private ToggleGroup statusGroup;
 
-    private ObservableList<Room_Scene1> roomList = FXCollections.observableArrayList();
-    private static final String ROOM_FILE = "rooms.txt";
-
     @javafx.fxml.FXML
     public void initialize() {
+
         ColRoomNumber.setCellValueFactory(new PropertyValueFactory<>("roomNumber"));
         ColStatus.setCellValueFactory(new PropertyValueFactory<>("roomStatus"));
 
+        // Set ToggleGroup
         RBAll.setToggleGroup(statusGroup);
         RBClean.setToggleGroup(statusGroup);
         RBDirty.setToggleGroup(statusGroup);
@@ -52,12 +42,12 @@ public class Scene3MonitorHousekeepingStatus
 
         RBAll.setSelected(true);
 
-        // ✔ Load data initially
         loadTableData();
     }
 
-    //  Load data from file
+    // Load all data
     private void loadTableData() {
+
         TableView1.getItems().clear();
 
         try (ObjectInputStream stream =
@@ -69,42 +59,22 @@ public class Scene3MonitorHousekeepingStatus
             }
 
         } catch (EOFException e) {
-            // file end
+            // normal
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
-    @javafx.fxml.FXML
-    public void next(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 4-Approve Guest Check-In.fxml.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
-        stage.setScene(scene);
-    }
-
+    // Refresh button
     @javafx.fxml.FXML
     public void RefreshOA(ActionEvent actionEvent) {
         loadTableData();
     }
 
+    // Filter by status
     @javafx.fxml.FXML
-    public void back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 2_Assign Rooms to Guests.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+    public void RBStatusOA(ActionEvent actionEvent) {
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
-        stage.setScene(scene);
-    }
-
-    @javafx.fxml.FXML
-    public void RBSatusOA(ActionEvent actionEvent) {
         TableView1.getItems().clear();
 
         String selectedStatus = "";
@@ -137,5 +107,24 @@ public class Scene3MonitorHousekeepingStatus
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // Navigation
+    public void next(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                HelloApplication.class.getResource("Scene-4-ApproveGuestCheck-In.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+    }
+
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                HelloApplication.class.getResource("Scene-2_AssignRoomstoGuests.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
     }
 }

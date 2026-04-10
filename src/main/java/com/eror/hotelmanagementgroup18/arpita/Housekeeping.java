@@ -14,17 +14,17 @@ public class Housekeeping {
 
     @javafx.fxml.FXML
     public void ShiftChangeOA(ActionEvent actionEvent) {
-        selectedPage = "Goal 6-Shift Change Request.fxml";
+        selectedPage = "Goal 6-ShiftChangeRequest.fxml";
     }
 
     @javafx.fxml.FXML
     public void EmergencyOA(ActionEvent actionEvent) {
-        selectedPage = "Goal 5-Emergency Report.fxml";
+        selectedPage = "Goal 5-EmergencyReport.fxml";
     }
 
     @javafx.fxml.FXML
     public void ReportIssuesOA(ActionEvent actionEvent) {
-        selectedPage = "Goal 2- Report Maintenance Issue.fxml";
+        selectedPage = "Goal 2-ReportMaintenanceIssue.fxml";
     }
 
     @javafx.fxml.FXML
@@ -34,22 +34,22 @@ public class Housekeeping {
 
     @javafx.fxml.FXML
     public void FloorProgressOA(ActionEvent actionEvent) {
-        selectedPage = "Goal 7- Floor Cleaning Progress.fxml";
+        selectedPage = "Goal 7-FloorCleaningProgress.fxml";
     }
 
     @javafx.fxml.FXML
     public void LostAndFoundOA(ActionEvent actionEvent) {
-        selectedPage = "Goal 3-Lost & Found.fxml";
+        selectedPage = "Goal 3-Lost&Found.fxml";
     }
 
     @javafx.fxml.FXML
     public void CleaningStatusOA(ActionEvent actionEvent) {
-        selectedPage = "Goal 1- Update Cleaning Status.fxml";
+        selectedPage = "Goal 1-UpdateCleaningStatus.fxml";
     }
 
     @javafx.fxml.FXML
     public void ProfileOA(ActionEvent actionEvent) {
-        selectedPage = "Goal 4-Update Profile.fxml";
+        selectedPage = "Goal 4-UpdateProfile.fxml";
     }
 
     @javafx.fxml.FXML

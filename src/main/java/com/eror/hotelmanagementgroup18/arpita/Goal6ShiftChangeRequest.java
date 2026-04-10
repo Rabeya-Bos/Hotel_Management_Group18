@@ -136,7 +136,7 @@ public class Goal6ShiftChangeRequest {
 
     @javafx.fxml.FXML
     public void NextOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 7- Floor Cleaning Progress.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 7-FloorCleaningProgress.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
@@ -148,7 +148,7 @@ public class Goal6ShiftChangeRequest {
 
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 7- Floor Cleaning Progress.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 7-FloorCleaningProgress.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();

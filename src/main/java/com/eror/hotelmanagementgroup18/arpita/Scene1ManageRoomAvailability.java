@@ -115,14 +115,18 @@ public class Scene1ManageRoomAvailability
     }
 
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void next(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 2_Assign Rooms to Guests.fxml.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 2_AssignRoomstoGuests.fxml.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
 
         stage.setScene(scene);
+    }
+
+    @javafx.fxml.FXML
+    public void NextOA(ActionEvent actionEvent) {
     }
 }

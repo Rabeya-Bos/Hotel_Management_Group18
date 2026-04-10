@@ -134,9 +134,20 @@ public class Scene2AssignRoomsToGuests {
         tempFile.renameTo(inputFile);
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void next(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-3-Monitor Housekeeping Status.fxml.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-3-MonitorHousekeepingStatus.fxml.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
+    }
+
+    @Deprecated
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-1-ManageRoomAvailability.fxml.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
@@ -146,13 +157,10 @@ public class Scene2AssignRoomsToGuests {
     }
 
     @javafx.fxml.FXML
-    public void back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-1-Manage Room Availability.fxml.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+    public void NextOA(ActionEvent actionEvent) {
+    }
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
-        stage.setScene(scene);
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }

@@ -184,9 +184,20 @@ public class Goal3LostFound {
         CBAditionalInfo.setSelected(false);
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void next(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 4-Update Profile.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 4-UpdateProfile.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+
+        stage.setScene(scene);
+    }
+
+    @Deprecated
+    public void back(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 2-ReportMaintenanceIssue.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
@@ -196,13 +207,10 @@ public class Goal3LostFound {
     }
 
     @javafx.fxml.FXML
-    public void back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 2- Report Maintenance Issue.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+    public void NextOA(ActionEvent actionEvent) {
+    }
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
-        stage.setScene(scene);
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }

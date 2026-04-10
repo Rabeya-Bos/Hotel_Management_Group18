@@ -90,7 +90,7 @@ public class Goal7FloorCleaningProgress {
         alert.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void next(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 8-Messages.fxml.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -101,14 +101,22 @@ public class Goal7FloorCleaningProgress {
         stage.setScene(scene);
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 6-Shift Change Request.fxml.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 6-ShiftChangeRequest.fxml.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
 
         stage.setScene(scene);
+    }
+
+    @javafx.fxml.FXML
+    public void NextOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }

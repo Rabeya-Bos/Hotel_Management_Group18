@@ -13,7 +13,10 @@ import java.io.*;
 public class Goal4UpdateProfile {
 
     @javafx.fxml.FXML
-    private RadioButton RBPreference, RBGender;
+    private RadioButton RBMale, RBFemale, RBPreference;
+
+    @javafx.fxml.FXML
+    private ToggleGroup genderGroup;
 
     @javafx.fxml.FXML
     private TextField TXTFullName, TXTUserName, TXTPassword, TXTEmail, TXTPhoneNumber;
@@ -28,9 +31,8 @@ public class Goal4UpdateProfile {
     private TableColumn<UserProfile_Goal4, Integer> ColUserID;
 
     @javafx.fxml.FXML
-    private TableColumn<UserProfile_Goal4, String> ColName, ColUserName,
-            ColPassword, ColEmail, ColPhone, ColRole,
-            ColGender, ColPreference, ColStatus;
+    private TableColumn<UserProfile_Goal4, String> ColName, ColUserName, ColPassword,
+            ColEmail, ColPhone, ColRole, ColGender, ColPreference, ColStatus;
 
     private int idCounter = 1;
 
@@ -66,19 +68,19 @@ public class Goal4UpdateProfile {
             }
 
         } catch (EOFException e) {
-            // end of file → normal
+            // normal
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    //  Save / Update
+    // Save / Update
     @javafx.fxml.FXML
     public void UpdateProfileOA(ActionEvent actionEvent) {
 
         UserProfile_Goal4 selected = TableView1.getSelectionModel().getSelectedItem();
 
-        String gender = RBGender.isSelected() ? "Male" : "Female";
+        String gender = RBMale.isSelected() ? "Male" : "Female";
         String preference = RBPreference.isSelected() ? "Yes" : "No";
         String status = "Active";
 
@@ -91,7 +93,7 @@ public class Goal4UpdateProfile {
 
         if (selected == null) {
 
-            //  New user
+            // New user
             UserProfile_Goal4 user = new UserProfile_Goal4(
                     idCounter++,
                     TXTFullName.getText(),
@@ -105,23 +107,22 @@ public class Goal4UpdateProfile {
                     status
             );
 
-            // FIXED try syntax
-            try (ObjectOutputStream out = new ObjectOutputStream(
-                    new FileOutputStream("users.bin", true)) {
+            try (ObjectOutputStream out =
+                         new ObjectOutputStream(new FileOutputStream("users.bin", true)) {
+                             protected void writeStreamHeader() throws IOException {
+                                 reset();
+                             }
+                         }) {
 
-                @Override
-                protected void writeStreamHeader() throws IOException {
-                    reset();
-                }
-            }) {
                 out.writeObject(user);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
         } else {
 
-            //  Update existing
+            // Update
             selected.setFullName(TXTFullName.getText());
             selected.setUserName(TXTUserName.getText());
             selected.setPassword(TXTPassword.getText());
@@ -138,7 +139,6 @@ public class Goal4UpdateProfile {
         ClearOA(null);
     }
 
-    //  Clear fields
     @javafx.fxml.FXML
     public void ClearOA(ActionEvent actionEvent) {
 
@@ -148,11 +148,10 @@ public class Goal4UpdateProfile {
         TXTEmail.clear();
         TXTPhoneNumber.clear();
         CmbRole.setValue(null);
-        RBGender.setSelected(false);
+        genderGroup.selectToggle(null);
         RBPreference.setSelected(false);
     }
 
-    // Rewrite file (for update)
     private void rewriteFile() {
 
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("users.bin"))) {
@@ -166,26 +165,19 @@ public class Goal4UpdateProfile {
         }
     }
 
-
-    @javafx.fxml.FXML
     public void next(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 5-Emergency Report.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 5-EmergencyReport.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
+        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
 
-    @javafx.fxml.FXML
     public void back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 3-Lost & Found.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 3-Lost&Found.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
+        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
 }

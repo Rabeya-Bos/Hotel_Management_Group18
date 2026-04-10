@@ -122,7 +122,7 @@ public class Scene7ApplyDiscount {
 
     @javafx.fxml.FXML
     public void NextOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-8-Staff Scheduling.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-8-StaffScheduling.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
@@ -133,7 +133,7 @@ public class Scene7ApplyDiscount {
 
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) throws IOException  {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 5- Late Check-Out Requests.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene- 5-LateCheck-OutRequests.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();

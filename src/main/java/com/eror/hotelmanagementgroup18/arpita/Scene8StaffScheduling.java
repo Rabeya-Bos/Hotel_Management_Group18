@@ -133,7 +133,7 @@ public class Scene8StaffScheduling {
 
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent)  throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-7-Apply Discount.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-7-ApplyDiscount.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
