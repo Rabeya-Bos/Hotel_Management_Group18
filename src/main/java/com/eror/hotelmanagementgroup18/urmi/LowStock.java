@@ -4,13 +4,11 @@ public class LowStock {
     private String itemName;
     private int currentStock;
     private int threshold;
-    private boolean isLowStock;
 
-    public LowStock(String itemName, boolean isLowStock, int threshold, int currentStock) {
+    public LowStock(String itemName, int currentStock, int threshold) {
         this.itemName = itemName;
-        this.isLowStock = isLowStock;
-        this.threshold = threshold;
         this.currentStock = currentStock;
+        this.threshold = threshold;
     }
 
     public String getItemName() {
@@ -21,22 +19,6 @@ public class LowStock {
         this.itemName = itemName;
     }
 
-    public int getThreshold() {
-        return threshold;
-    }
-
-    public void setThreshold(int threshold) {
-        this.threshold = threshold;
-    }
-
-    public boolean isLowStock() {
-        return isLowStock;
-    }
-
-    public void setLowStock(boolean lowStock) {
-        isLowStock = lowStock;
-    }
-
     public int getCurrentStock() {
         return currentStock;
     }
@@ -45,13 +27,20 @@ public class LowStock {
         this.currentStock = currentStock;
     }
 
+    public int getThreshold() {
+        return threshold;
+    }
+
+    public void setThreshold(int threshold) {
+        this.threshold = threshold;
+    }
+
     @Override
     public String toString() {
         return "LowStock{" +
                 "itemName='" + itemName + '\'' +
                 ", currentStock=" + currentStock +
                 ", threshold=" + threshold +
-                ", isLowStock=" + isLowStock +
                 '}';
     }
 }

@@ -10,9 +10,9 @@ public class Goal_16_shiftClosingController
     @javafx.fxml.FXML
     private TextField totalOnlineTF;
     @javafx.fxml.FXML
-    private TableColumn countCol;
+    private TableColumn<ShiftClosing,Integer> countCol;
     @javafx.fxml.FXML
-    private TableColumn amountCol;
+    private TableColumn<ShiftClosing,Double> amountCol;
     @javafx.fxml.FXML
     private TextField totalCashTF;
     @javafx.fxml.FXML
@@ -22,7 +22,7 @@ public class Goal_16_shiftClosingController
     @javafx.fxml.FXML
     private TextField totalCardTF;
     @javafx.fxml.FXML
-    private TableView shiftSummaryTV;
+    private TableView<ShiftClosing> shiftSummaryTV;
     @javafx.fxml.FXML
     private Label submissionStatusLabel;
     @javafx.fxml.FXML
@@ -30,7 +30,7 @@ public class Goal_16_shiftClosingController
     @javafx.fxml.FXML
     private Label statusLabel;
     @javafx.fxml.FXML
-    private TableColumn TypeCol;
+    private TableColumn<ShiftClosing,String> TypeCol;
 
     @javafx.fxml.FXML
     public void initialize() {

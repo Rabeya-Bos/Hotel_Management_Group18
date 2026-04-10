@@ -6,14 +6,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
+import java.time.LocalDate;
+
 public class Goal_8_inventorySyncConroller
 {
     @javafx.fxml.FXML
-    private TableColumn departmentCol;
+    private TableColumn<InventorySync,String> departmentCol;
     @javafx.fxml.FXML
-    private TableColumn statusCol;
+    private TableColumn<InventorySync,String> statusCol;
     @javafx.fxml.FXML
-    private TableView syncLogTV;
+    private TableView<InventorySync> syncLogTV;
     @javafx.fxml.FXML
     private TextField connectedDepartmentsTF;
     @javafx.fxml.FXML
@@ -21,7 +23,7 @@ public class Goal_8_inventorySyncConroller
     @javafx.fxml.FXML
     private Label messageLabel;
     @javafx.fxml.FXML
-    private TableColumn timestampCol;
+    private TableColumn<InventorySync, LocalDate> timestampCol;
 
     @javafx.fxml.FXML
     public void initialize() {

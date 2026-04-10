@@ -9,19 +9,19 @@ import javafx.scene.control.TextField;
 public class Goal_2_stockUsageController
 {
     @javafx.fxml.FXML
-    private TableColumn departmentCol;
+    private TableColumn<StockUsage,String> departmentCol;
     @javafx.fxml.FXML
-    private ComboBox itemComboBox;
+    private ComboBox<String> itemComboBox;
     @javafx.fxml.FXML
-    private TableColumn quantityCol;
+    private TableColumn<StockUsage,Integer> quantityCol;
     @javafx.fxml.FXML
     private TextField quantityTF;
     @javafx.fxml.FXML
-    private ComboBox departmentComboBox;
+    private ComboBox<String> departmentComboBox;
     @javafx.fxml.FXML
-    private TableView usageTV;
+    private TableView<StockUsage> usageTV;
     @javafx.fxml.FXML
-    private TableColumn itemCol;
+    private TableColumn<StockUsage,Integer> itemCol;
 
     @javafx.fxml.FXML
     public void initialize() {

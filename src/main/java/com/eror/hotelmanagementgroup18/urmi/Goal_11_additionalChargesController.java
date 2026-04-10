@@ -8,19 +8,19 @@ public class Goal_11_additionalChargesController
     @javafx.fxml.FXML
     private Label totalLabel;
     @javafx.fxml.FXML
-    private TableColumn chargeTypeCol;
+    private TableColumn<AdditionalCharges,String> chargeTypeCol;
     @javafx.fxml.FXML
-    private TableColumn amountCol;
+    private TableColumn<AdditionalCharges,Double> amountCol;
     @javafx.fxml.FXML
-    private ComboBox chargeTypeComboBox;
+    private ComboBox<String> chargeTypeComboBox;
     @javafx.fxml.FXML
     private TextField amountTF;
     @javafx.fxml.FXML
-    private TableColumn guestCol;
+    private TableColumn<AdditionalCharges,Integer> guestCol;
     @javafx.fxml.FXML
     private TextField guestIdTF;
     @javafx.fxml.FXML
-    private TableView chargeTV;
+    private TableView<AdditionalCharges> chargeTV;
 
     @javafx.fxml.FXML
     public void initialize() {

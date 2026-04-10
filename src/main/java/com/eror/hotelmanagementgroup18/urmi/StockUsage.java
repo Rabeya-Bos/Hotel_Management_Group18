@@ -6,13 +6,11 @@ public class StockUsage {
     private String department;
     private String item;
     private int quantityUsed;
-    private LocalDate usageDate;
 
-    public StockUsage(String department, String item, int quantityUsed, LocalDate usageDate) {
+    public StockUsage(String department, String item, int quantityUsed) {
         this.department = department;
         this.item = item;
         this.quantityUsed = quantityUsed;
-        this.usageDate = usageDate;
     }
 
     public String getDepartment() {
@@ -39,21 +37,12 @@ public class StockUsage {
         this.quantityUsed = quantityUsed;
     }
 
-    public LocalDate getUsageDate() {
-        return usageDate;
-    }
-
-    public void setUsageDate(LocalDate usageDate) {
-        this.usageDate = usageDate;
-    }
-
     @Override
     public String toString() {
         return "StockUsage{" +
                 "department='" + department + '\'' +
                 ", item='" + item + '\'' +
                 ", quantityUsed=" + quantityUsed +
-                ", usageDate=" + usageDate +
                 '}';
     }
 }

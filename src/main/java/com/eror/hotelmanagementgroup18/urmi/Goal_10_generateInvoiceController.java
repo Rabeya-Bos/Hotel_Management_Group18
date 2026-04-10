@@ -10,15 +10,15 @@ public class Goal_10_generateInvoiceController
     @javafx.fxml.FXML
     private TextField guestTF;
     @javafx.fxml.FXML
-    private TableColumn nightCol;
+    private TableColumn<GenerateInvoice,Integer> nightCol;
     @javafx.fxml.FXML
-    private TableColumn totalCol;
+    private TableColumn<GenerateInvoice,Integer> totalCol;
     @javafx.fxml.FXML
     private TextField nightTF;
     @javafx.fxml.FXML
-    private TableView invoiceTV;
+    private TableView<GenerateInvoice> invoiceTV;
     @javafx.fxml.FXML
-    private TableColumn guestCol;
+    private TableColumn<GenerateInvoice,Integer> guestCol;
 
     @javafx.fxml.FXML
     public void initialize() {

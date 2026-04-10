@@ -8,15 +8,15 @@ import javafx.scene.control.TextField;
 public class Goal_3_lowStockController
 {
     @javafx.fxml.FXML
-    private TableColumn thresholdCol;
+    private TableColumn<LowStock,String> thresholdCol;
     @javafx.fxml.FXML
-    private TableView stockTV;
+    private TableView<LowStock> stockTV;
     @javafx.fxml.FXML
     private TextField thresholdTF;
     @javafx.fxml.FXML
-    private TableColumn currentStockCol;
+    private TableColumn<LowStock,Integer> currentStockCol;
     @javafx.fxml.FXML
-    private TableColumn itemCol;
+    private TableColumn<LowStock,Integer> itemCol;
 
     @javafx.fxml.FXML
     public void initialize() {

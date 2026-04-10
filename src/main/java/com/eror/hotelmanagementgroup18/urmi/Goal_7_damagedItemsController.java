@@ -3,34 +3,36 @@ package com.eror.hotelmanagementgroup18.urmi;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
+import java.time.LocalDate;
+
 public class Goal_7_damagedItemsController
 {
     @javafx.fxml.FXML
-    private ComboBox itemComboBox;
+    private ComboBox<String> itemComboBox;
     @javafx.fxml.FXML
-    private ComboBox conditionComboBox;
+    private ComboBox<String> conditionComboBox;
     @javafx.fxml.FXML
-    private TableColumn dateReportedCol;
+    private TableColumn<DamagedItems, LocalDate> dateReportedCol;
     @javafx.fxml.FXML
-    private ComboBox filterConditionComboBox;
+    private ComboBox<String> filterConditionComboBox;
     @javafx.fxml.FXML
-    private TableColumn itemNameCol;
+    private TableColumn<DamagedItems,String> itemNameCol;
     @javafx.fxml.FXML
     private Label statusLabel;
     @javafx.fxml.FXML
-    private TableView removedItemsTV;
+    private TableView<DamagedItems> removedItemsTV;
     @javafx.fxml.FXML
-    private TableColumn statusCol;
+    private TableColumn<DamagedItems,String> statusCol;
     @javafx.fxml.FXML
-    private TableColumn conditionCol;
+    private TableColumn<DamagedItems,String> conditionCol;
     @javafx.fxml.FXML
-    private TableColumn quantityCol;
+    private TableColumn<DamagedItems,Integer> quantityCol;
     @javafx.fxml.FXML
     private TextArea reasonTA;
     @javafx.fxml.FXML
     private TextField quantityTF;
     @javafx.fxml.FXML
-    private TableColumn recordIdCol;
+    private TableColumn<DamagedItems,Integer> recordIdCol;
 
     @javafx.fxml.FXML
     public void initialize() {

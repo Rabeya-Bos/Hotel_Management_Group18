@@ -11,11 +11,11 @@ public class Goal_12_refundAdjustmentController
     @javafx.fxml.FXML
     private TextField invoiceIdTF;
     @javafx.fxml.FXML
-    private TableColumn reasonCol;
+    private TableColumn<RefundAdjustment,String> reasonCol;
     @javafx.fxml.FXML
-    private TableView refundTV;
+    private TableView<RefundAdjustment> refundTV;
     @javafx.fxml.FXML
-    private TableColumn invoiceCol;
+    private TableColumn<RefundAdjustment,Integer> invoiceCol;
     @javafx.fxml.FXML
     private TextField refundAmountTF;
     @javafx.fxml.FXML
@@ -23,7 +23,7 @@ public class Goal_12_refundAdjustmentController
     @javafx.fxml.FXML
     private Label messageLabel;
     @javafx.fxml.FXML
-    private TableColumn refundAmountCol;
+    private TableColumn<RefundAdjustment,Double> refundAmountCol;
 
     @javafx.fxml.FXML
     public void initialize() {
