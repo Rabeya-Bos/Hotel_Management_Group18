@@ -1,33 +1,40 @@
 package com.eror.hotelmanagementgroup18.urmi;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
+
+import java.time.LocalDate;
+
 public class Goal_5_purchaseRequestController
 {
     @javafx.fxml.FXML
-    private ComboBox vendorComboBox;
+    private ComboBox<String> vendorComboBox;
     @javafx.fxml.FXML
-    private ComboBox filterStatusComboBox;
+    private ComboBox<String> filterStatusComboBox;
     @javafx.fxml.FXML
-    private ComboBox itemComboBox;
+    private ComboBox<String> itemComboBox;
     @javafx.fxml.FXML
-    private TableColumn requestIdCol;
+    private TableColumn<PurchaseRequest,Integer> requestIdCol;
     @javafx.fxml.FXML
-    private TableColumn requestDateCol;
+    private TableColumn<PurchaseRequest, LocalDate> requestDateCol;
     @javafx.fxml.FXML
-    private TableView requestTV;
+    private TableView<PurchaseRequest> requestTV;
     @javafx.fxml.FXML
-    private TableColumn itemNameCol;
+    private TableColumn<PurchaseRequest,String> itemNameCol;
     @javafx.fxml.FXML
     private Label statusLabel;
     @javafx.fxml.FXML
-    private TableColumn statusCol;
+    private TableColumn<PurchaseRequest,String> statusCol;
     @javafx.fxml.FXML
     private TextArea reasonRequestTA;
     @javafx.fxml.FXML
-    private TableColumn quantityCol;
+    private TableColumn<PurchaseRequest,Integer> quantityCol;
     @javafx.fxml.FXML
     private TextField quantityTF;
     @javafx.fxml.FXML
-    private TableColumn vendorCol;
+    private TableColumn<PurchaseRequest,String> vendorCol;
+    @javafx.fxml.FXML
+    private TableColumn<PurchaseRequest,String> reasonCol;
 
     @javafx.fxml.FXML
     public void initialize() {
