@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.eror.hotelmanagementgroup18.urmi.Dashboard2Controller"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="408.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.DashBoard2Controller">
+    <children>
+        <Button layoutY="35.0" mnemonicParsing="false" onAction="#processPaymentButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Process Payment" />
+        <Label alignment="CENTER" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Dashboard-2">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <Button layoutY="83.0" mnemonicParsing="false" onAction="#generateInvoiceButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Generate Invoice" />
+        <Button layoutY="131.0" mnemonicParsing="false" onAction="#additionalChargesButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Additional Charges" />
+        <Button layoutY="176.0" mnemonicParsing="false" onAction="#refundAdjustmentButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Refund Adjustment" />
+        <Button layoutY="222.0" mnemonicParsing="false" onAction="#dailyCashSummaryButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Daily Cash Summary" />
+        <Button layoutY="270.0" mnemonicParsing="false" onAction="#paymentMethodButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Payment Method" />
+        <Button layoutY="318.0" mnemonicParsing="false" onAction="#transactionSearchButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Transaction Search" />
+        <Button layoutY="360.0" mnemonicParsing="false" onAction="#shiftClosingButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: lightblue;" text="Shift Closing" />
+    </children>
 </AnchorPane>
-
-
-
