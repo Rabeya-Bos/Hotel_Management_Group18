@@ -36,18 +36,10 @@ public class Goal1UpdateCleaningStatus {
         CmbRoomType.getItems().addAll("Single", "Double", "Suite");
 
         //  Cleaning status
-        CmbCleaningStatus.getItems().addAll(
-                "Pending",
-                "In Progress",
-                "Cleaned",
-                "Needs Maintenance"
-        );
+        CmbCleaningStatus.getItems().addAll("Pending", "In Progress", "Cleaned", "Needs Maintenance");
 
         //  Additional options
-        CmbAdtionalOption.getItems().addAll(
-                "Deep Cleaning",
-                "Damage Report",
-                "None"
+        CmbAdtionalOption.getItems().addAll("Deep Cleaning", "Damage Report", "None"
         );
     }
 
@@ -55,9 +47,7 @@ public class Goal1UpdateCleaningStatus {
     @javafx.fxml.FXML
     public void UpdateStatusOA(ActionEvent actionEvent) {
 
-        if (TXTRoomNumber.getText().isEmpty() ||
-                CmbRoomType.getValue() == null ||
-                CmbCleaningStatus.getValue() == null) {
+        if (TXTRoomNumber.getText().isEmpty() || CmbRoomType.getValue() == null || CmbCleaningStatus.getValue() == null) {
 
             LVLResult.setText(" Fill all required fields!");
             return;
