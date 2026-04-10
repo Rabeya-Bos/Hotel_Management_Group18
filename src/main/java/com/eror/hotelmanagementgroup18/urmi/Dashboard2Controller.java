@@ -1,5 +1,7 @@
 package com.eror.hotelmanagementgroup18.urmi;
 
+import javafx.event.ActionEvent;
+
 public class Dashboard2Controller
 {
     @javafx.fxml.FXML
