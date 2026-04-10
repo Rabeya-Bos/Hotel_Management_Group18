@@ -89,19 +89,24 @@ public class Login {
 //            Stage stage = (Stage) usernameTextField.getScene().getWindow();
 //            stage.setScene(new Scene(root));
 //            stage.show();
-//            //Sumon
-//        }else if (username.equals(SwimmingTraineeID) && password.equals(SwimmingTraineepassword)) {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/eror/hotelmanagementgroup18/Sumon/SwimmingTraineeDashboard.fxml"));
-//            Parent root = loader.load();
-//            Stage stage = (Stage) usernameTextField.getScene().getWindow();
-//            stage.setScene(new Scene(root));
-//            stage.show();
-//        }else if (username.equals(PhysiotherapistID) && password.equals(Physiotherapistpassword)) {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/eror/hotelmanagementgroup18/Sumon/PhysiotherapistDashboard.fxml"));
-//            Parent root = loader.load();
-//            Stage stage = (Stage) usernameTextField.getScene().getWindow();
-//            stage.setScene(new Scene(root));
-//            stage.show();
+// Sumon (Admin and Security Dashboard)
+        } else if (username.equals(AdminDashID) && password.equals(AdminDashPass)) {
+            // Admin Dashboard load korbe
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/eror/hotelmanagementgroup18/Sumon/Admindashboard.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Admin Dashboard");
+            stage.show();
+
+        } else if (username.equals(SecurityDashID) && password.equals(SecurityDashPass)) {
+            // Security Dashboard load korbe
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/eror/hotelmanagementgroup18/Sumon/SecurityDashboard.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Security Dashboard");
+            stage.show();
 
             //others path
         } else {
