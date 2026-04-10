@@ -96,8 +96,10 @@ public class Goal1UpdateCleaningStatus {
         LVLResult.setText("");
     }
 
-    @Deprecated
-    public void next(ActionEvent actionEvent) throws IOException {
+
+
+    @javafx.fxml.FXML
+    public void NextOA(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 2-ReportMaintenanceIssue.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
@@ -105,9 +107,5 @@ public class Goal1UpdateCleaningStatus {
         Stage stage = (Stage) b.getScene().getWindow();
 
         stage.setScene(scene);
-    }
-
-    @javafx.fxml.FXML
-    public void NextOA(ActionEvent actionEvent) {
     }
 }
