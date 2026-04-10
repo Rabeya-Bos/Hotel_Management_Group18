@@ -11,67 +11,53 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.text.BreakIterator;
 
-public class Scene1ManageRoomAvailability
-{
+public class Scene1ManageRoomAvailability {
+
     @javafx.fxml.FXML
-    private TableColumn<Scene1ManageRoomAvailability,String> ColRoomType;
+    private TableColumn<Room_Scene1, String> ColRoomType;
     @javafx.fxml.FXML
-    private TextField TXTRoomStatus;
+    private TableColumn<Room_Scene1, Integer> ColRoomNO;
     @javafx.fxml.FXML
-    private TextField TXTRoomType;
+    private TableColumn<Room_Scene1, String> ColRoomStatus;
+
     @javafx.fxml.FXML
-    private TableColumn<Scene1ManageRoomAvailability,Integer> ColRoomNO;
+    private TextField TXTRoomStatus, TXTRoomType, TXTRoomNo;
     @javafx.fxml.FXML
-    private TableColumn<Scene1ManageRoomAvailability,String>ColRoomStatus;
-    @javafx.fxml.FXML
-    private TextField TXTRoomNo;
-    @javafx.fxml.FXML
-    private TableView <Room_Scene1>TableView_1;
+    private TableView<Room_Scene1> TableView_1;
     @javafx.fxml.FXML
     private Label ResultLVL;
     @javafx.fxml.FXML
-    private ComboBox <String>CmbAvailabilty;
+    private ComboBox<String> CmbAvailabilty;
 
-    private ObservableList<Scene1ManageRoomAvailability> roomList = FXCollections.observableArrayList();
+    private ObservableList<Room_Scene1> roomList = FXCollections.observableArrayList();
 
-    public Scene1ManageRoomAvailability(int i, String aDouble, String occupied) {
+
+    public Scene1ManageRoomAvailability() {
     }
-
 
     @javafx.fxml.FXML
     public void initialize() {
         CmbAvailabilty.getItems().addAll("Available", "Occupied", "Maintenance");
 
-        roomList.add(new Scene1ManageRoomAvailability(101, "Single", "Available"));
-        roomList.add(new Scene1ManageRoomAvailability(102, "Double", "Occupied"));
-        roomList.add(new Scene1ManageRoomAvailability(103, "Suite", "Maintenance"));
-
         ColRoomNO.setCellValueFactory(new PropertyValueFactory<>("roomNo"));
         ColRoomType.setCellValueFactory(new PropertyValueFactory<>("roomType"));
         ColRoomStatus.setCellValueFactory(new PropertyValueFactory<>("roomStatus"));
 
+        TableView_1.setItems(roomList);
+        loadInitialData();
+    }
 
-        try (ObjectInputStream stream = new ObjectInputStream(
-                new FileInputStream("Room_Availability.dat")
-        )) {
-            TableView_1.getItems().clear(); // clear old data first
-
+    private void loadInitialData() {
+        File file = new File("Room_Availability.dat");
+        if (!file.exists()) return;
+        try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(file))) {
             while (true) {
                 Room_Scene1 t = (Room_Scene1) stream.readObject();
-                TableView_1.getItems().add(t);
+                roomList.add(t);
             }
-
-        } catch (EOFException e) {
-            // End of file reached (normal case)
-            ResultLVL.setText("Data loaded successfully!");
-
-        } catch (IOException e) {
-            ResultLVL.setText("Could not load data from file!");
-
-        } catch (ClassNotFoundException e) {
-            ResultLVL.setText("Invalid data in the file!");
+        } catch (Exception e) {
+            // End of file or error
         }
     }
 
@@ -80,51 +66,50 @@ public class Scene1ManageRoomAvailability
         Room_Scene1 selectedRoom = TableView_1.getSelectionModel().getSelectedItem();
         String newStatus = CmbAvailabilty.getValue();
 
-        if (selectedRoom == null) {
-            ResultLVL.setText("Select a room first!");
-            return;
-        }
-
-        if (newStatus == null) {
-            ResultLVL.setText("Select a status!");
+        if (selectedRoom == null || newStatus == null) {
+            ResultLVL.setText("Please select room and status!");
             return;
         }
 
         selectedRoom.setRoomStatus(newStatus);
         TableView_1.refresh();
-
         ResultLVL.setText("Status updated!");
-
     }
-
 
     @javafx.fxml.FXML
     public void SaveOA(ActionEvent actionEvent) {
-        try (ObjectOutputStream stream =
-                     new ObjectOutputStream(new FileOutputStream("room.bin"))) {
-
-            for (Room_Scene1 r : TableView_1.getItems()) {
+        try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream("Room_Availability.dat"))) {
+            for (Room_Scene1 r : roomList) {
                 stream.writeObject(r);
             }
-
-            ResultLVL.setText("Saved successfully!");
-
+            ResultLVL.setText("Data saved successfully!");
         } catch (IOException e) {
             ResultLVL.setText("Error saving file!");
         }
     }
 
 
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) throws IOException {
 
+        String path = "/com/eror/hotelmanagementgroup18/arpita/Goal3-LostAndFound.fxml";
+        switchScene(path, actionEvent);
+    }
 
     @javafx.fxml.FXML
     public void NextOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene-2_AssignRoomstoGuests.fxml.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        String path = "/com/eror/hotelmanagementgroup18/arpita/Scene-2_AssignRoomstoGuests.fxml";
+        switchScene(path, actionEvent);
+    }
 
-        Button b = (Button) actionEvent.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
-
+    private void switchScene(String path, ActionEvent event) throws IOException {
+        if (getClass().getResource(path) == null) {
+            System.out.println("Path not found: " + path);
+            return;
+        }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        Scene scene = new Scene(loader.load());
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
 }
