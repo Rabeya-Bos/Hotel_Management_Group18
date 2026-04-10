@@ -3,6 +3,9 @@ package com.eror.hotelmanagementgroup18.arpita;
 import javafx.event.ActionEvent;
 
 public class Housekeeping {
+    public Housekeeping(String room, String status) {
+    }
+
     @javafx.fxml.FXML
     public void ShiftChangeOA(ActionEvent actionEvent) {
     }

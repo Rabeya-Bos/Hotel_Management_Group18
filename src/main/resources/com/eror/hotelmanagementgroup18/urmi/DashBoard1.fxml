@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="408.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.DashBoard1Controller">
+   <children>
+      <Button layoutY="35.0" mnemonicParsing="false" onAction="#recordSupplyButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Record Supply" />
+      <Label alignment="CENTER" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Dashboard-1">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button layoutY="83.0" mnemonicParsing="false" onAction="#stockUsageButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Stock Usage" />
+      <Button layoutY="131.0" mnemonicParsing="false" onAction="#lowStockButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Low Stock" />
+      <Button layoutY="176.0" mnemonicParsing="false" onAction="#inventoryReportButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Inventory Report" />
+      <Button layoutY="222.0" mnemonicParsing="false" onAction="#purchaseRequestButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Purchase Request" />
+      <Button layoutY="270.0" mnemonicParsing="false" onAction="#supplierDeliveryButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Supplier Delivery" />
+      <Button layoutY="318.0" mnemonicParsing="false" onAction="#damagedItemsButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Damaged Items" />
+      <Button layoutY="360.0" mnemonicParsing="false" onAction="#InventorySyncButtonOA" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: pink;" text="Inventory Sync" />
+   </children>
+</AnchorPane>
