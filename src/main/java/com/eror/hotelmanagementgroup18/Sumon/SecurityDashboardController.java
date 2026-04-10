@@ -6,35 +6,34 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SecurityDashboardController {
 
-    @FXML private Button accessCardBtn;
-    @FXML private Button incidentReportBtn;
-    @FXML private Button signOutBtn;
-
-    @FXML
-    private void handleAccessCardBtn(ActionEvent event) throws IOException {
-        navigateTo(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal1.fxml");
+    private void navigate(ActionEvent event, String path) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(path));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            System.err.println("Error: Could not load " + path);
+            e.printStackTrace();
+        }
     }
 
-    @FXML
-    private void handleIncidentReportingBtn(ActionEvent event) throws IOException {
-        navigateTo(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal2.fxml");
-    }
+    @FXML void handleAccessCardBtn(ActionEvent event) { navigate(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal1.fxml"); }
+    @FXML void handleIncidentReportBtn(ActionEvent event) { navigate(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal2.fxml"); }
+    @FXML void handleSurveillanceBtn(ActionEvent event) { navigate(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal3.fxml"); }
+    @FXML void handleEmergencyBtn(ActionEvent event) { navigate(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal4.fxml"); }
+    @FXML void handleCCTVBtn(ActionEvent event) { navigate(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal5.fxml"); }
+    @FXML void handleVIPParkingBtn(ActionEvent event) { navigate(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal6.fxml"); }
+    @FXML void handleLostFoundBtn(ActionEvent event) { navigate(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal7.fxml"); }
+    @FXML void handleRestrictedZoneBtn(ActionEvent event) { navigate(event, "/com/eror/hotelmanagementgroup18/Sumon/user_8goal8.fxml"); }
 
     @FXML
-    private void handleSignOutBtn(ActionEvent event) throws IOException {
-        navigateTo(event, "/com/eror/hotelmanagementgroup18/Sumon/Login.fxml");
-    }
-
-    private void navigateTo(ActionEvent event, String path) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(path));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+    void handleSignOutBtn(ActionEvent event) {
+        navigate(event, "/com/eror/hotelmanagementgroup18/hello-view.fxml");
     }
 }

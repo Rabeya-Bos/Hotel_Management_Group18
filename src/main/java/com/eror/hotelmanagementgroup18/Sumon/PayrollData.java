@@ -1,13 +1,9 @@
 package com.eror.hotelmanagementgroup18.Sumon;
 
 public class PayrollData {
-    private String staffId;
-    private String name;
-    private double basePay;
-    private double overtime;
-    private double total;
+    private String staffId, name, basePay, overtime, total;
 
-    public PayrollData(String staffId, String name, double basePay, double overtime, double total) {
+    public PayrollData(String staffId, String name, String basePay, String overtime, String total) {
         this.staffId = staffId;
         this.name = name;
         this.basePay = basePay;
@@ -17,7 +13,7 @@ public class PayrollData {
 
     public String getStaffId() { return staffId; }
     public String getName() { return name; }
-    public double getBasePay() { return basePay; }
-    public double getOvertime() { return overtime; }
-    public double getTotal() { return total; }
+    public String getBasePay() { return basePay; }
+    public String getOvertime() { return overtime; }
+    public String getTotal() { return total; }
 }
