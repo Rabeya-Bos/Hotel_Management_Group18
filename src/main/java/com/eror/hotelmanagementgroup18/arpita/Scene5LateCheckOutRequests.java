@@ -1,6 +1,5 @@
 package com.eror.hotelmanagementgroup18.arpita;
 
-import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -123,7 +122,7 @@ public class Scene5LateCheckOutRequests
 
     @javafx.fxml.FXML
     public void NextOA(ActionEvent actionEvent) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/eror/hotelmanagementgroup18/arpita/Scene- 6-Seasonal Pricing.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/eror/hotelmanagementgroup18/arpita/Scene-6-SeasonalPricing.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
