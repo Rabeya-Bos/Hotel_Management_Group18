@@ -39,7 +39,7 @@ public class Goal7FloorCleaningProgress {
         );
     }
 
-    // UPDATE STATUS (Save data)
+
     @javafx.fxml.FXML
     public void UpdateStatus(ActionEvent actionEvent) {
 
@@ -92,7 +92,7 @@ public class Goal7FloorCleaningProgress {
 
     @Deprecated
     public void next(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal 8-Messages.fxml.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal8-Messages.fxml.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         Button b = (Button) actionEvent.getSource();
@@ -112,11 +112,5 @@ public class Goal7FloorCleaningProgress {
         stage.setScene(scene);
     }
 
-    @Deprecated
-    public void NextOA(ActionEvent actionEvent) {
-    }
 
-    @Deprecated
-    public void BackOA(ActionEvent actionEvent) {
-    }
 }
