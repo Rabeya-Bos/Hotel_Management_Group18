@@ -36,10 +36,10 @@ public class Login {
 //    private final String CricketCoachID = "Cricket Coach";
 //    private final String CricketCoachpassword = "Cricket Coach";
 //    //Sumon
-//    private final String SwimmingTraineeID = "SwimmingTrainee";
-//    private final String SwimmingTraineepassword = "SwimmingT";
-//    private final String PhysiotherapistID = "Physiotherapist";
-//    private final String Physiotherapistpassword = "Physiotherapist";
+    private final String AdminDashID = "admin";
+    private final String AdminDashPass = "1234";
+    private final String SecurityDashID = "security";
+    private final String SecurityDashPass = "1234";
 
 
 //others user password
