@@ -11,7 +11,7 @@ public class Manager {
 
     private void switchScene(String fxmlPath, ActionEvent event) {
         try {
-            // চেক করা হচ্ছে ফাইলটি আসলে আছে কি না
+
             if (getClass().getResource(fxmlPath) == null) {
                 System.out.println("Error: FXML file not found at -> " + fxmlPath);
                 return;
@@ -28,7 +28,7 @@ public class Manager {
 
     @javafx.fxml.FXML
     public void HousekeepingStatusOA(ActionEvent actionEvent) {
-        // .java নয়, .fxml লোড করতে হবে
+
         switchScene("/com/eror/hotelmanagementgroup18/arpita/Scene-3-MonitorHousekeepingStatus.fxml", actionEvent);
     }
 
@@ -67,7 +67,7 @@ public class Manager {
         switchScene("/com/eror/hotelmanagementgroup18/arpita/Scene-1-ManageRoomAvailability.fxml", actionEvent);
     }
 
-    // আপনার লাস্ট এররটি এই মেথডটি না থাকার কারণে আসছিল
+
     @javafx.fxml.FXML
     public void StaffSchedulingOA(ActionEvent actionEvent) {
         switchScene("/com/eror/hotelmanagementgroup18/arpita/Scene-8-StaffScheduling.fxml", actionEvent);
