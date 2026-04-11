@@ -20,7 +20,7 @@
 
         <Button layoutX="23.0" layoutY="124.0" mnemonicParsing="false" onAction="#syncInventoryButtonOA" prefWidth="250.0" text="Sync Inventory" />
 
-        <Label fx:id="syncStatusLabel" layoutX="14.0" layoutY="320.0" prefWidth="250.0" />
+        <Label fx:id="syncStatusLabel" layoutX="14.0" layoutY="286.0" prefHeight="51.0" prefWidth="250.0" />
 
         <Label layoutX="300.0" layoutY="50.0" text="Synchronization Log" />
         <TableView fx:id="syncLogTV" layoutX="300.0" layoutY="70.0" prefHeight="300.0" prefWidth="338.0">
@@ -36,5 +36,6 @@
         <Button layoutX="23.0" layoutY="188.0" mnemonicParsing="false" onAction="#viewDetailsButtonOA" text="View Details" />
         <Button layoutX="127.0" layoutY="188.0" mnemonicParsing="false" onAction="#refreshButtonOA" text="Refresh" />
         <TextField fx:id="connectedDepartmentsTF" layoutX="23.0" layoutY="80.0" prefHeight="25.0" prefWidth="250.0" />
+      <Button layoutX="69.0" layoutY="245.0" mnemonicParsing="false" onAction="#backButtonOA" prefHeight="25.0" prefWidth="81.0" text="Back" />
     </children>
 </AnchorPane>

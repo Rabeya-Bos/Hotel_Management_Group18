@@ -1,10 +1,14 @@
 package com.eror.hotelmanagementgroup18.urmi;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Goal_14_paymentMethodController
 {
@@ -43,5 +47,23 @@ public class Goal_14_paymentMethodController
 
     @javafx.fxml.FXML
     public void resetButtonOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backButtonOA(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal_13_dailyCashSummary.fxml"));
+        Scene scene = new Scene((Parent) fxmlLoader.load());
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        stage.setScene(scene);
+    }
+
+    @javafx.fxml.FXML
+    public void nextButtonOA(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal_15_transactionSearch.fxml"));
+        Scene scene = new Scene((Parent) fxmlLoader.load());
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        stage.setScene(scene);
     }
 }

@@ -30,6 +30,13 @@ public class Login {
     private final String HousekeepingID = "Housekeeping";
     private final String Housekeepingpassword = "1234";
 
+    // --- Urmi Credentials ---
+    private final String InventoryID = "inventory";
+    private final String Inventorypassword = "1234";
+    private final String CashierID = "cashier";
+    private final String Cashierpassword = "1234";
+
+
     // --- Sumon Credentials ---
     private final String AdminDashID = "admin";
     private final String AdminDashPass = "1234";
@@ -66,11 +73,16 @@ public class Login {
         }
 
         // --- Urmi (Currently Commented Out) ---
-        /*
-        else if (username.equals(DirectorGeneralID) && password.equals(DirectorGeneralpassword)) {
-            loadDashboard("/com/eror/hotelmanagementgroup18/urmi/DirectorGdashboard.fxml", "Director Dashboard");
+
+        else if (username.equals(InventoryID) && password.equals(Inventorypassword)) {
+            loadDashboard("/com/eror/hotelmanagementgroup18/urmi/DashBoard1.fxml", "Inventory Dashboard");
         }
-        */
+        else if (username.equals(CashierID) && password.equals(Cashierpassword)) {
+            loadDashboard("/com/eror/hotelmanagementgroup18/urmi/DashBoard2.fxml", "Cashier Dashboard");
+
+
+        }
+
 
         else {
             errorLabel.setText("Incorrect username or password. Please try again.");

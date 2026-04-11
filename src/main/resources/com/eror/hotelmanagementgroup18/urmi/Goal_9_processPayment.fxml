@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="516.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_9_processPaymentController">
+<AnchorPane prefHeight="547.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_9_processPaymentController">
     <children>
         <Label layoutX="146.0" layoutY="23.0" text="Payment Processing System">
             <font>
@@ -34,5 +34,6 @@
                 <TableColumn fx:id="amountCol" prefWidth="125.0" text="Amount ($)" />
             </columns>
         </TableView>
+      <Button layoutX="206.0" layoutY="508.0" mnemonicParsing="false" onAction="#nextButtonOA" text="Next" />
     </children>
 </AnchorPane>

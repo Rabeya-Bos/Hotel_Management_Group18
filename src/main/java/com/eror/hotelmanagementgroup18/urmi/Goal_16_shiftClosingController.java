@@ -1,7 +1,15 @@
 package com.eror.hotelmanagementgroup18.urmi;
 
+import com.eror.hotelmanagementgroup18.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Goal_16_shiftClosingController
 {
@@ -34,6 +42,9 @@ public class Goal_16_shiftClosingController
 
     @javafx.fxml.FXML
     public void initialize() {
+        TypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
+        countCol.setCellValueFactory(new PropertyValueFactory<>("count"));
+        amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
     }
 
     @javafx.fxml.FXML
@@ -42,5 +53,14 @@ public class Goal_16_shiftClosingController
 
     @javafx.fxml.FXML
     public void printReportButtonOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backButtonOA(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Goal_15_transactionSearch.fxml"));
+        Scene scene = new Scene((Parent) fxmlLoader.load());
+        Button b = (Button) actionEvent.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        stage.setScene(scene);
     }
 }

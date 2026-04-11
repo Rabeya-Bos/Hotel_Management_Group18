@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="478.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_12_refundAdjustmentController">
+<AnchorPane prefHeight="514.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_12_refundAdjustmentController">
     <children>
         <Label layoutX="25.0" layoutY="56.0" text="Invoice ID" />
         <TextField fx:id="invoiceIdTF" layoutX="125.0" layoutY="51.0" prefWidth="200" />
@@ -35,5 +35,7 @@
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
+      <Button layoutX="64.0" layoutY="475.0" mnemonicParsing="false" onAction="#backButtonOA" prefHeight="25.0" prefWidth="74.0" text="Back" />
+      <Button layoutX="186.0" layoutY="475.0" mnemonicParsing="false" onAction="#nextButtonOA" prefHeight="25.0" prefWidth="74.0" text="Next" />
     </children>
 </AnchorPane>

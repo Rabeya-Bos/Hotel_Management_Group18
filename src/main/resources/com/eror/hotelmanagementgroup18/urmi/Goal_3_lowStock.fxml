@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="475.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_3_lowStockController">
+<AnchorPane prefHeight="505.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_3_lowStockController">
     <children>
         <Label layoutX="90.0" layoutY="14.0" text="Low Stock Management">
             <font>
@@ -31,5 +31,7 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
+      <Button layoutX="46.0" layoutY="460.0" mnemonicParsing="false" onAction="#backButtonOA" text="Back" />
+      <Button layoutX="266.0" layoutY="460.0" mnemonicParsing="false" onAction="#nextButtonOA" text="Next" />
     </children>
 </AnchorPane>

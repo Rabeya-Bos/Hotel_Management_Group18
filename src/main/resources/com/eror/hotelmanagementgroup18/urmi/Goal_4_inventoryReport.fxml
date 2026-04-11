@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="516.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_4_inventoryReportController">
+<AnchorPane prefHeight="552.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_4_inventoryReportController">
     <children>
         <Label layoutX="155.0" layoutY="15.0" text="Inventory Report Generation">
             <font>
@@ -42,5 +42,7 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
+      <Button layoutX="42.0" layoutY="504.0" mnemonicParsing="false" onAction="#backButtonOA" text="Back" />
+      <Button layoutX="413.0" layoutY="504.0" mnemonicParsing="false" onAction="#nextButtonOA" text="Next" />
     </children>
 </AnchorPane>

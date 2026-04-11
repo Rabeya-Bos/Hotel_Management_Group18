@@ -55,6 +55,8 @@
         <Button layoutX="240.0" layoutY="405.0" mnemonicParsing="false" onAction="#filterButtonOA" prefHeight="30.0" prefWidth="80.0" text="Filter" />
         <Button layoutX="330.0" layoutY="405.0" mnemonicParsing="false" onAction="#resetFilterButtonOA" prefHeight="30.0" prefWidth="80.0" text="Reset" />
 
-        <Label fx:id="statusLabel" layoutX="15.0" layoutY="450.0" prefHeight="50.0" prefWidth="570.0" style="-fx-background-color: #f0f0f0; -fx-padding: 8;" wrapText="true" />
+        <Label fx:id="statusLabel" layoutX="123.0" layoutY="450.0" prefHeight="50.0" prefWidth="462.0" style="-fx-background-color: #f0f0f0; -fx-padding: 8;" wrapText="true" />
+      <Button layoutX="37.0" layoutY="463.0" mnemonicParsing="false" onAction="#backButtonOA" prefHeight="25.0" prefWidth="62.0" text="Back" />
+      <Button layoutX="593.0" layoutY="463.0" mnemonicParsing="false" onAction="#nextButtonOA" prefHeight="25.0" prefWidth="62.0" text="Next" />
     </children>
 </AnchorPane>

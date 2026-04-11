@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_14_paymentMethodController">
+<AnchorPane prefHeight="587.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eror.hotelmanagementgroup18.urmi.Goal_14_paymentMethodController">
     <children>
         <Label layoutX="179.0" layoutY="21.0" text="Payment Method Processing">
             <font>
@@ -49,6 +49,8 @@
         <Button layoutX="94.0" layoutY="450.0" mnemonicParsing="false" onAction="#processPaymentButtonOA" prefHeight="25.0" prefWidth="189.0" text="Process Payment" />
         <Button layoutX="296.0" layoutY="450.0" mnemonicParsing="false" onAction="#resetButtonOA" prefHeight="25.0" prefWidth="214.0" text="Reset" />
 
-        <Label fx:id="statusLabel" layoutX="50.0" layoutY="480.0" prefWidth="500.0" />
+        <Label fx:id="statusLabel" layoutX="47.0" layoutY="485.0" prefHeight="40.0" prefWidth="498.0" />
+      <Button layoutX="100.0" layoutY="548.0" mnemonicParsing="false" onAction="#backButtonOA" prefHeight="25.0" prefWidth="171.0" text="Back" />
+      <Button layoutX="311.0" layoutY="548.0" mnemonicParsing="false" onAction="#nextButtonOA" prefHeight="25.0" prefWidth="171.0" text="Next" />
     </children>
 </AnchorPane>

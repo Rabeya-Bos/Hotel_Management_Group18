@@ -37,5 +37,7 @@
                 <TableColumn fx:id="amountCol" text="Amount ($)" />
             </columns>
         </TableView>
+      <Button layoutX="48.0" layoutY="279.0" mnemonicParsing="false" onAction="#backButtonOA" text="Back" />
+      <Button layoutX="196.0" layoutY="279.0" mnemonicParsing="false" onAction="#nextButtonOA" text="Next" />
     </children>
 </AnchorPane>

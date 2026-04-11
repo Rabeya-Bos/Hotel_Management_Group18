@@ -49,5 +49,6 @@
         <Label fx:id="statusLabel" layoutX="451.0" layoutY="362.0" prefHeight="42.0" prefWidth="222.0" />
 
         <Label fx:id="submissionStatusLabel" layoutX="450.0" layoutY="460.0" prefWidth="320.0" />
+      <Button layoutX="562.0" layoutY="470.0" mnemonicParsing="false" onAction="#backButtonOA" text="Back" />
     </children>
 </AnchorPane>

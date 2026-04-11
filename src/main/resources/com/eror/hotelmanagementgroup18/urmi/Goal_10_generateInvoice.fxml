@@ -31,5 +31,7 @@
                 <TableColumn fx:id="totalCol" prefWidth="124.0" text="Total Amount ($)" />
             </columns>
         </TableView>
+      <Button layoutX="68.0" layoutY="511.0" mnemonicParsing="false" onAction="#backButtonOA" prefHeight="25.0" prefWidth="74.0" text="Back" />
+      <Button layoutX="342.0" layoutY="511.0" mnemonicParsing="false" onAction="#nextButtonOA" prefHeight="25.0" prefWidth="83.0" text="Next" />
     </children>
 </AnchorPane>
