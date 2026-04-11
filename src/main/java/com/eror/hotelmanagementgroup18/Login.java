@@ -18,38 +18,30 @@ public class Login {
     @FXML private Label errorLabel;
     @FXML private TextField usernameTextField;
 
-    // Credentials
+    // --- Rabeya Credentials ---
     private final String GuestID = "Guest";
     private final String Guestpassword = "1234";
     private final String ReceptionistID = "Receptionist";
     private final String Receptionistpassword = "1234";
 
-//    arpita
-//    private final String GuestID = "Guest";
-//    private final String Guestpassword = "1234";
-//    private final String ReceptionistID = "Receptionist";
-//    private final String Receptionistpassword = "1234";
+    // --- Arpita Credentials ---
+    private final String ManagerID = "Manager";
+    private final String Managerpassword = "1234";
+    private final String HousekeepingID = "Housekeeping";
+    private final String Housekeepingpassword = "1234";
 
-//    urmi
-//    private final String GuestID = "Guest";
-//    private final String Guestpassword = "1234";
-//    private final String ReceptionistID = "Receptionist";
-//    private final String Receptionistpassword = "1234";
-
-    // Sumon
+    // --- Sumon Credentials ---
     private final String AdminDashID = "admin";
     private final String AdminDashPass = "1234";
     private final String SecurityDashID = "security";
     private final String SecurityDashPass = "1234";
-
-
 
     @FXML
     public void LoginOnActionButton(ActionEvent actionEvent) throws IOException {
         String username = usernameTextField.getText().trim();
         String password = passwordTextField.getText().trim();
 
-        // --- Rabeya ---
+        // --- Rabeya Login Logic ---
         if (username.equals(GuestID) && password.equals(Guestpassword)) {
             loadDashboard("/com/eror/hotelmanagementgroup18/Rabeya/guestDashboard.fxml", "Guest Dashboard");
         }
@@ -57,23 +49,28 @@ public class Login {
             loadDashboard("/com/eror/hotelmanagementgroup18/Rabeya/ReceptionistDashboard.fxml", "Receptionist Dashboard");
         }
 
-        // --- Arpita
-        // else if (username.equals(EventCoordinatorID) && password.equals(EventCoordinatorpassword)) {
-        //     loadDashboard("/com/eror/hotelmanagementgroup18/Arpita/EventCdashbord.fxml", "Event Dashboard");
-        // }
+        // --- Arpita Login Logic ---
+        else if (username.equals(ManagerID) && password.equals(Managerpassword)) {
+            loadDashboard("/com/eror/hotelmanagementgroup18/arpita/Manager.fxml", "Manager Dashboard");
+        }
+        else if (username.equals(HousekeepingID) && password.equals(Housekeepingpassword)) {
+            loadDashboard("/com/eror/hotelmanagementgroup18/arpita/HouseKeeping.fxml", "Housekeeping Dashboard");
+        }
 
-        // --- Urmi
-        // else if (username.equals(DirectorGeneralID) && password.equals(DirectorGeneralpassword)) {
-        //     loadDashboard("/com/eror/hotelmanagementgroup18/urmi/DirectorGdashboard.fxml", "Director Dashboard");
-        // }
-
-        // Sumon
+        // --- Sumon Login Logic ---
         else if (username.equals(AdminDashID) && password.equals(AdminDashPass)) {
             loadDashboard("/com/eror/hotelmanagementgroup18/Sumon/Admin_deshboard.fxml", "Admin Dashboard");
         }
         else if (username.equals(SecurityDashID) && password.equals(SecurityDashPass)) {
             loadDashboard("/com/eror/hotelmanagementgroup18/Sumon/security_dashboard.fxml", "Security Dashboard");
         }
+
+        // --- Urmi (Currently Commented Out) ---
+        /*
+        else if (username.equals(DirectorGeneralID) && password.equals(DirectorGeneralpassword)) {
+            loadDashboard("/com/eror/hotelmanagementgroup18/urmi/DirectorGdashboard.fxml", "Director Dashboard");
+        }
+        */
 
         else {
             errorLabel.setText("Incorrect username or password. Please try again.");
