@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.eror.hotelmanagementgroup18.Rabeya.Show">
+
+    <children>
+
+        <Label layoutX="36.0" layoutY="23.0"
+               text="All the detail will be stored here" />
+
+        <Button layoutX="36.0" layoutY="63.0"
+                onAction="#LoadButtonOA"
+                text="Load" />
+
+        <Button layoutX="650.0" layoutY="360.0"
+                onAction="#BackButtonOA"
+                text="Back" />
+
+        <TableView fx:id="tableView"
+                   layoutX="17.0" layoutY="120.0"
+                   prefHeight="230.0" prefWidth="760.0">
+
+            <columns>
+
+                <TableColumn fx:id="nameCol" text="Guest Name" prefWidth="100"/>
+                <TableColumn fx:id="emailCol" text="Email" prefWidth="120"/>
+                <TableColumn fx:id="roomCol" text="Room" prefWidth="100"/>
+                <TableColumn fx:id="checkInCol" text="Check-In" prefWidth="100"/>
+                <TableColumn fx:id="checkOutCol" text="Check-Out" prefWidth="100"/>
+                <TableColumn fx:id="passportCol" text="Passport" prefWidth="100"/>
+                <TableColumn fx:id="adultsCol" text="Adults" prefWidth="70"/>
+                <TableColumn fx:id="childrenCol" text="Children" prefWidth="70"/>
+
+            </columns>
+
+        </TableView>
+
+    </children>
+</AnchorPane>
